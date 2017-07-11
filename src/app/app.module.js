@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { HeaderModule } from 'mahrio-header/src/header.module';
+
 import { AppRoutingModule } from './app.routing.js';
 import { MainPage } from './main/main.page';
 import { Pages} from './pages';
 import { Components } from './components';
+
+import { HomeService } from './pages/home/home.service';
 
 @NgModule({
   declarations: [
@@ -21,10 +25,15 @@ import { Components } from './components';
     ReactiveFormsModule,
     HttpModule,
 
+    HeaderModule,
+
     // Put this one last to avoid the 404 route capturing all requests
     AppRoutingModule,
   ],
-    bootstrap: [
+  providers: [
+    HomeService
+  ],
+  bootstrap: [
     MainPage
   ]
 })

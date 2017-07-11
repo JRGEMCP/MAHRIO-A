@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HomePage, AboutPage, FourOhFourPage } from './pages';
+import { HomePage, AboutPage, PrivacyPage, FourOhFourPage } from './pages';
 
 const Routes = [
   { path: '', component: HomePage},
-  { path: 'about', component: AboutPage },
+  { path: 'about-us', component: AboutPage },
+  { path: 'privacy', component: PrivacyPage },
   { path: '**', component: FourOhFourPage, pathMatch: 'full' }
 ];
 
