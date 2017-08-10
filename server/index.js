@@ -8,7 +8,16 @@ if (process.env.NODE_ENV === 'development') {
 
 require('mahrio').runServer(process.env, __dirname ).then( function( server ) {
 
-  require('mahrio-header/server/routes/')( server, 'node_modules/mahrio-header/dist/');
-  require('./routes')( server, 'dist/' );
+  // Schemas
+  require('mahrio-header/server/models/user');
 
+
+
+  // SERVER VIEWS
+  require('./routes/views')( server, 'server/views/', true);
+  // STATIC
+  require('./routes')( server, 'dist/' );
+  // APIs
+  require('mahrio-header/server/routes/index')( server );
+  require('./routes/apis')( server, 'server/views/' );
 });

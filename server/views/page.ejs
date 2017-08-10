@@ -1,0 +1,41 @@
+<% if( typeof page !== 'undefined' && page ) { %>
+    <%
+    for (var i = 0, l = page.sections.length; i < l; i++) {
+        var key = page.sections[i].key.split('-');
+        switch (key[0]) {
+            case 'heading':
+            %>          <%- include page-components/heading.ejs %>  <%
+                break;
+            case 'feature':
+            %>          <%- include page-components/featured.ejs %> <%
+                break;
+            case 'highlight':
+            %>          <%- include page-components/highlight.ejs %> <%
+                break;
+            case 'mission':
+            %>          <%- include page-components/mission.ejs %> <%
+                break;
+            case 'article':
+            %>          <%- include page-components/articles.ejs %> <%
+                break;
+            case 'contact':
+            %>              <contact></contact> <%
+                break;
+            case 'team':
+            %>          <%- include page-components/team.ejs %> <%
+                break;
+                case 'carousel':
+
+                    break;
+            case 'custom':
+            %>          <%- page.sections[i].content %> <%
+                break;
+            case 'footer':
+            %><%- include page-components/footer.ejs %> <%
+                break;
+        }
+    } %>
+<%
+}
+%>
+PAGE CONTENT

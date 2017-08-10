@@ -8,6 +8,7 @@ export {
   FourOhFourPage,
   AboutPage,
   PrivacyPage,
+
 };
 
 export const Pages = [

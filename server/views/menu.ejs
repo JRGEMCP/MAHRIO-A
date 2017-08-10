@@ -1,0 +1,9 @@
+<% if( typeof menu !== 'undefined' && menu.content && menu.content.links ) { %>
+        <ul> <% for( var i = 0; i < menu.content.links.length; i++ ) { %>
+            <li>
+                <a href="<%-menu.content.links[i].href%>">
+                    <%- menu.content.links[i].text %>
+                </a>
+            </li> <% } %>
+        </ul>
+<% } %>

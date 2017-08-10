@@ -13,5 +13,9 @@ import style from '../stylesheets/main.scss';
 
 export class MainPage {
 
+  goToApp($event){
+    console.log( $event );
+  }
+
 }
 

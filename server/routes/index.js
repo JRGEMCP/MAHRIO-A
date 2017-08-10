@@ -1,5 +1,13 @@
 module.exports = function( server, publicPath ) {
   server.route({
+    path: '/favicon.ico',
+    method: 'GET',
+    handler: function(req, rep){
+      rep({});
+    }
+  });
+
+  server.route({
     path: '/assets/{any*}',
     method: 'GET',
     handler: {
@@ -10,11 +18,12 @@ module.exports = function( server, publicPath ) {
   });
 
   server.route({
-    path: '/{any*}',
+    path: '/fonts/{any*}',
     method: 'GET',
-    handler: function( req, rep ) {
-
-      rep.file(publicPath + 'index.html')
+    handler: {
+      directory: {
+        path: publicPath + 'fonts/'
+      }
     }
   });
 };

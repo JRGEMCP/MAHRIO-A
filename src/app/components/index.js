@@ -1,9 +1,13 @@
-import { TopNavComponent } from './top-navigation/top-navigation.component'
+import { HomeComponent } from './home/home.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 export {
-  TopNavComponent
+  HomeComponent,
+  PaginationComponent,
+
 };
 
 export const Components = [
-  TopNavComponent
+  HomeComponent,
+  PaginationComponent,
 ];

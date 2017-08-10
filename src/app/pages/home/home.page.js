@@ -6,7 +6,7 @@ import style from './home.style.scss';
 import { HomeService } from './home.service';
 
 @Component({
-  selector: 'home',
+  selector: 'home-page',
   template,
   styles: [style]
 })
@@ -18,6 +18,7 @@ export class HomePage {
   }
   constructor (HomeService){
     this.hacking = HomeService.hacking();
+    this.lnks = ['T'];
   }
 
   ngOnInit () {

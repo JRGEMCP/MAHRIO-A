@@ -1,0 +1,57 @@
+<h1>Heading</h1>
+<!-- HEADING
+<% var heading = page.sections[i].content; %>
+<%- JSON.stringify(heading) %>
+-->
+<hero-slider>
+    <h1 class="hidden">Heading</h1>
+    <section id="heading" class="cd-hero">
+        <ul class="cd-hero-slider">
+            <% for( var x = 0, f = heading.sections.length; x < f; x++){
+                var item = heading.sections[x]; %>
+            <li style="background: url('<%= item.bg %>') center center #000 no-repeat; background-size: cover;"
+                class="<%= !x ? 'selected':''%>">
+                <div style="background: <%=item.overlay ? item.overlay : 'initial'%>"
+                     class="<%=item.col ? item.col : 'cd-full-width'%>">
+                    <div class="col-data">
+                        <h2 style="max-width: 100%">
+                            <%= item.h2%>
+                        </h2>
+                        <p>
+                            <%= item.p%>
+                        </p>
+                        <% if( item.buttons && item.buttons.length ) {
+                            var btns = item.buttons;
+                        for( var btn = 0; btn < btns.length; btn++){ %>
+                        <a href="<%=btns[btn].link%>" class="<%=!btns[btn].img ? 'btn btn-primary btn-lg' : ''%>">
+                            <% if (btns[btn].img ) { %>
+                            <img src="<%=btns[btn].img%>" width="<%=btns[btn].imgWidth ? btns[btn].imgWidth : ''%>">
+                            <% } else if (btns[btn].text ) { %>
+                            <%- btns[btn].text %>
+                            <% } %>
+                        </a>
+                        <% }
+                        } %>
+                    </div>
+                </div>
+            </li>
+            <% } %>
+        </ul>
+        <% if( heading.sections.length > 1) { %>
+        <div class="cd-slider-nav">
+            <nav>
+                <span class="cd-marker item-1"></span>
+                <ul>
+                    <% for( var link = 0; link < heading.sections.length; link++ ) { %>
+                    <li class="<%=!link ? 'selected':''%>">
+                        <i class="fa fa-2x <%=heading.sections[link].icon %>"></i>
+                        <br>
+                        <%=heading.sections[link].name %>
+                    </li>
+                    <% } %>
+                </ul>
+            </nav>
+        </div>
+        <% } %>
+    </section>
+</hero-slider>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mahrio/a - Views</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+    <%- include style.ejs %>
+</head>
+<body>
+    <div id="spinner-overlay"><div class="loader"></div></div>
+
+    <div id="seo-content">
+        <% include menu.ejs %>
+
+        <% include page.ejs %>
+    </div>
+
+    <div id="ng-app">
+        <app></app>
+    </div>
+</body>
+
+<% include scripts.ejs %>
+</html>

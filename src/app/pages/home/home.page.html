@@ -1,60 +1,75 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-8" style="min-height: 250px; background: #e3e3e3; padding: 50px;">
-            <h1>Home</h1>
-            <p><i class="fa fa-pencil-square-o"></i> Edit me in /src/app/pages/home/home.template.html</p>
-        </div>
-        <div class="col-md-4">
-            <ul>
-                <li><a href="">Find a Mentor</a></li>
-                <li><a href="">Popular Technology</a></li>
-                <li><a href="">Technology Applications</a></li>
-                <li><a href="">Technology Breakdown</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <h2>&gt; Life Hacking</h2>
-
-    <div class="row">
-        <div class="col-md-8 p-0">
-            <div class="row">
-                <div class="col-md-6" *ngFor="let val of hacking">
-                    <div class="card mb-4">
-                        <div class="img"></div>
-                        <label>{{val.label}}</label>
-                        <h4>{{val.heading}} &gt;&gt;</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="p-4 mb-4" style="background: #333333; color: #e3e3e3;" [routerLink]="['/','about-us']">
-                <label>Our Mission</label>
-                <h5>To be your most trusted source for technology running in the background.</h5>
-            </div>
-            <div class="card mb-4">
-                <div class="img"></div>
-                <label>Train Watching</label>
-                <h4>10 reasons to have a train reminder</h4>
-            </div>
-            <div class="card mb-4">
-                <label>Train Watching</label>
-                <h5>10 reasons to have a train reminder</h5>
-            </div>
-            <div class="card mb-4">
-                <label>Train Watching</label>
-                <h5>10 reasons to have a train reminder</h5>
-            </div>
-            <div class="card">
-                <h5>Sign Up for Weekly Technology Tips</h5>
-                <input type="text" class="form-control">
-                <button class="btn btn-block">
-                    Sign Up
-                </button>
-                <small><label><i class="fa fa-lock"></i> Your <a [routerLink]="['/','privacy']">privacy</a> is important to us</label></small>
+<div class="site-wrapper">
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+            <div class="inner cover">
+                <h1 class="cover-heading">Cover your page.</h1>
+                <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+                <p class="lead">
+                    <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+                </p>
             </div>
         </div>
     </div>
 </div>
 
+<div class="jumbotron row mt-2">
+    <div class="container">
+        <div class="pull-right col-md-3 hidden-md-down" style="height: 100%">
+
+        </div>
+        <h1 class="display-3">Hello, world!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
+    </div>
+</div>
+
+<div class="jumbotron row mt-2 text-right">
+    <div class="container">
+        <div class="pull-left col-md-3 hidden-md-down" style="height: 100%">
+
+        </div>
+        <h1 class="display-3">Hello, world!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
+    </div>
+</div>
+
+<div class="jumbotron row mt-2">
+    <div class="container">
+        <div class="pull-right col-md-3 hidden-md-down" style="height: 100%">
+
+        </div>
+        <h1 class="display-3">Hello, world!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <h2>Heading</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+        </div>
+        <div class="col-md-4 col-12">
+            <h2>Heading</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+        </div>
+        <div class="col-md-4 col-12">
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron row mt-2 text-center">
+    <div class="container">
+        <h1 class="display-3">What's on your mind?</h1>
+        <p>Have any questions or feedback on the site? Have anything we can help you build? We'd love to hear from you.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Talk to Us</a></p>
+    </div>
+</div>
