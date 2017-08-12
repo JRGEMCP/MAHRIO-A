@@ -27113,12 +27113,15 @@ module.exports = function (it, S) {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Services; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__oauth_session_service__ = __webpack_require__(434);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__oauth_session_service__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__notification_service__ = __webpack_require__(459);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__oauth_session_service__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__notification_service__["a"]; });
 
 
 
 
-var Services = [__WEBPACK_IMPORTED_MODULE_0__oauth_session_service__["a" /* OauthSessionService */]];
+
+var Services = [__WEBPACK_IMPORTED_MODULE_0__oauth_session_service__["a" /* OauthSessionService */], __WEBPACK_IMPORTED_MODULE_1__notification_service__["a" /* NotificationService */]];
 
 /***/ }),
 /* 39 */
@@ -66974,6 +66977,11 @@ var Components = [__WEBPACK_IMPORTED_MODULE_0__session_session_component__["a" /
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__notification_template_html__ = __webpack_require__(449);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__notification_template_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__notification_template_html__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__notification_style_scss__ = __webpack_require__(460);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__notification_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__notification_style_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services__ = __webpack_require__(38);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _dec, _class;
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -66981,12 +66989,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
 
+
+
+
 var NotificationComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* Component */])({
   selector: 'notification',
-  template: __WEBPACK_IMPORTED_MODULE_1__notification_template_html___default.a
-}), _dec(_class = function NotificationComponent() {
-  _classCallCheck(this, NotificationComponent);
-}) || _class);
+  template: __WEBPACK_IMPORTED_MODULE_1__notification_template_html___default.a,
+  styles: [__WEBPACK_IMPORTED_MODULE_2__notification_style_scss___default.a]
+}), _dec(_class = function () {
+  _createClass(NotificationComponent, null, [{
+    key: 'parameters',
+    get: function get() {
+      return [__WEBPACK_IMPORTED_MODULE_3__services__["b" /* NotificationService */]];
+    }
+  }]);
+
+  function NotificationComponent(NotificationService) {
+    _classCallCheck(this, NotificationComponent);
+
+    this.notice = NotificationService;
+    this.notices = this.notice.getAll();
+  }
+
+  return NotificationComponent;
+}()) || _class);
 
 /***/ }),
 /* 425 */
@@ -67051,14 +67077,15 @@ var LoginComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__
   _createClass(LoginComponent, null, [{
     key: 'parameters',
     get: function get() {
-      return [__WEBPACK_IMPORTED_MODULE_2__services__["b" /* OauthSessionService */]];
+      return [__WEBPACK_IMPORTED_MODULE_2__services__["c" /* OauthSessionService */], __WEBPACK_IMPORTED_MODULE_2__services__["b" /* NotificationService */]];
     }
   }]);
 
-  function LoginComponent(OauthSessionService) {
+  function LoginComponent(OauthSessionService, NotificationService) {
     _classCallCheck(this, LoginComponent);
 
     this.session = OauthSessionService;
+    this.notice = NotificationService;
     this.go = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* EventEmitter */]();
     this.access = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* EventEmitter */]();
     this.user = {};
@@ -67077,6 +67104,9 @@ var LoginComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__
       _this.session.setToken(res.headers.get('authorization'));
       localStorage.Authorization = res.headers.get('authorization');
       _this.access.emit();
+      if (!res.confirmed) {
+        _this.notice.addNotice('Not Confirmed');
+      }
     }, function (err) {
       console.log('err: ' + err);
     });
@@ -67120,7 +67150,7 @@ var RecoverPasswordComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_
   _createClass(RecoverPasswordComponent, null, [{
     key: 'parameters',
     get: function get() {
-      return [__WEBPACK_IMPORTED_MODULE_2__services__["b" /* OauthSessionService */]];
+      return [__WEBPACK_IMPORTED_MODULE_2__services__["c" /* OauthSessionService */]];
     }
   }]);
 
@@ -67184,7 +67214,7 @@ var RecoverPasswordUpdateComponent = (_dec = __webpack_require__.i(__WEBPACK_IMP
   _createClass(RecoverPasswordUpdateComponent, null, [{
     key: 'parameters',
     get: function get() {
-      return [__WEBPACK_IMPORTED_MODULE_2__services__["b" /* OauthSessionService */]];
+      return [__WEBPACK_IMPORTED_MODULE_2__services__["c" /* OauthSessionService */]];
     }
   }]);
 
@@ -67239,7 +67269,7 @@ var RegisterComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_
   _createClass(RegisterComponent, null, [{
     key: 'parameters',
     get: function get() {
-      return [__WEBPACK_IMPORTED_MODULE_3__services__["b" /* OauthSessionService */]];
+      return [__WEBPACK_IMPORTED_MODULE_3__services__["c" /* OauthSessionService */]];
     }
   }]);
 
@@ -67305,7 +67335,7 @@ var UpdatePasswordComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_M
   _createClass(UpdatePasswordComponent, null, [{
     key: 'parameters',
     get: function get() {
-      return [__WEBPACK_IMPORTED_MODULE_2__services__["b" /* OauthSessionService */]];
+      return [__WEBPACK_IMPORTED_MODULE_2__services__["c" /* OauthSessionService */]];
     }
   }]);
 
@@ -67363,17 +67393,18 @@ var SessionComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0
   _createClass(SessionComponent, null, [{
     key: 'parameters',
     get: function get() {
-      return [__WEBPACK_IMPORTED_MODULE_3__ng_bootstrap_ng_bootstrap__["b" /* NgbModal */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_5__services__["b" /* OauthSessionService */]];
+      return [__WEBPACK_IMPORTED_MODULE_3__ng_bootstrap_ng_bootstrap__["b" /* NgbModal */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_5__services__["c" /* OauthSessionService */], __WEBPACK_IMPORTED_MODULE_5__services__["b" /* NotificationService */]];
     }
   }]);
 
-  function SessionComponent(ngbModal, activateRoute, oauthSession) {
+  function SessionComponent(ngbModal, activateRoute, oauthSession, notificationService) {
     var _this = this;
 
     _classCallCheck(this, SessionComponent);
 
     this.ngbModal = ngbModal;
     this.route = activateRoute;
+    this.notice = notificationService;
     this.route.queryParams.subscribe(function (params) {
       if (params['token']) {
         _this.session.isValidToken(params['token']).then(function (res) {
@@ -67399,6 +67430,9 @@ var SessionComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0
         _this2.loading = false;
         _this2.account = true;
         _this2.auth.emit(true);
+        if (!res.confirmed) {
+          _this2.notice.addNotice('not confirmmmmed');
+        }
       }, function (err) {
         delete localStorage.Authorization;
         _this2.loading = false;
@@ -67430,6 +67464,7 @@ var SessionComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0
       delete localStorage.Authorization;
       delete _this4.isCollapsed;
       _this4.auth.emit(false);
+      _this4.notice.clearAll();
     }, function (err) {});
   };
 
@@ -67666,7 +67701,7 @@ module.exports = "<div style=\"min-height: 400px; background: #e3e3e3;\">\n    <
 /* 444 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"site-wrapper\">\n    <div class=\"site-wrapper-inner\">\n        <div class=\"cover-container\">\n            <div class=\"inner cover\">\n                <h1 class=\"cover-heading\">Ambient Computing</h1>\n                <p class=\"lead\">We are entering the age where technology works in the background. User experiences are about to change.</p>\n                <p class=\"lead\">\n                    <a href=\"#\" class=\"btn btn-lg btn-secondary\">Learn more</a>\n                </p>\n            </div>\n        </div>\n    </div>\n</div>\n\n<div class=\"jumbotron row mt-2\">\n    <div class=\"container\">\n        <div class=\"pull-right col-md-3 hidden-md-down\" style=\"height: 100%\">\n\n        </div>\n        <h1 class=\"display-3\">Collect</h1>\n        <p>Gather data from the organic world we call Earth.</p>\n        <p><a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Learn more »</a></p>\n    </div>\n</div>\n\n<div class=\"jumbotron row mt-2 text-right\">\n    <div class=\"container\">\n        <div class=\"pull-left col-md-3 hidden-md-down\" style=\"height: 100%\">\n\n        </div>\n        <h1 class=\"display-3\">Transmit</h1>\n        <p>Does not matter weather you move through a copper wire, infrared waves or light pulses.</p>\n        <p><a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Learn more »</a></p>\n    </div>\n</div>\n\n<div class=\"jumbotron row mt-2\">\n    <div class=\"container\">\n        <div class=\"pull-right col-md-3 hidden-md-down\" style=\"height: 100%\">\n\n        </div>\n        <h1 class=\"display-3\">Analyze</h1>\n        <p>Visualize frequency across time, amplitiude of delta and many other angles.</p>\n        <p><a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Learn more »</a></p>\n    </div>\n</div>\n\n<div class=\"container\">\n\n    <div class=\"row\">\n        <div class=\"col-md-4 col-12\">\n            <h2>Store</h2>\n            <p>Bank your own data into a database or file system.</p>\n            <p><a class=\"btn btn-secondary\" href=\"#\" role=\"button\">View details »</a></p>\n        </div>\n        <div class=\"col-md-4 col-12\">\n            <h2>Control</h2>\n            <p>When certain conditions are met engage triggers to propagate execution into other processess.</p>\n            <p><a class=\"btn btn-secondary\" href=\"#\" role=\"button\">View details »</a></p>\n        </div>\n        <div class=\"col-md-4 col-12\">\n            <h2>Share</h2>\n            <p>Let the world know you solve a problem.</p>\n            <p><a class=\"btn btn-secondary\" href=\"#\" role=\"button\">View details »</a></p>\n        </div>\n    </div>\n</div>\n\n<div class=\"jumbotron row mt-2 text-center\">\n    <div class=\"container\">\n        <h1 class=\"display-3\">What's on your mind?</h1>\n        <p>Have any questions or feedback on the site? Have anything we can help you build? We'd love to hear from you.</p>\n        <p><a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Talk to Us</a></p>\n    </div>\n</div>"
+module.exports = "<div class=\"site-wrapper\">\n    <div class=\"site-wrapper-inner\">\n        <div class=\"cover-container\">\n            <div class=\"inner cover\">\n                <h1 class=\"cover-heading\">Ambient Computing</h1>\n                <p class=\"lead\">We are entering the age where technology works in the background. User experiences are about to change.</p>\n                <p class=\"lead\">\n                    <a href=\"#\" class=\"btn btn-lg btn-secondary\">Learn more</a>\n                </p>\n            </div>\n        </div>\n    </div>\n</div>\n\n<div class=\"jumbotron row mt-2\">\n    <div class=\"container\">\n        <div class=\"pull-right col-md-3 hidden-md-down\" style=\"height: 100%\">\n\n        </div>\n        <h1 class=\"display-3\">Collect</h1>\n        <p>Gather data from the organic world we call Earth.</p>\n        <p><a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Learn more »</a></p>\n    </div>\n</div>\n\n<div class=\"jumbotron row mt-2 text-right\">\n    <div class=\"container\">\n        <div class=\"pull-left col-md-3 hidden-md-down\" style=\"height: 100%\">\n\n        </div>\n        <h1 class=\"display-3\">Transmit</h1>\n        <p>Does not matter weather you move through a copper wire, infrared waves or light pulses.</p>\n        <p><a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Learn more »</a></p>\n    </div>\n</div>\n\n<div class=\"jumbotron row mt-2\">\n    <div class=\"container\">\n        <div class=\"pull-right col-md-3 hidden-md-down\" style=\"height: 100%\">\n\n        </div>\n        <h1 class=\"display-3\">Control</h1>\n        <p>When certain conditions are met engage triggers to propagate execution into other processess.</p>\n        <p><a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Learn more »</a></p>\n    </div>\n</div>\n\n<div class=\"container\">\n\n    <div class=\"row\">\n        <div class=\"col-md-4 col-12\">\n            <h2>Store</h2>\n            <p>Bank your own data into a database or file system.</p>\n            <p><a class=\"btn btn-secondary\" href=\"#\" role=\"button\">View details »</a></p>\n        </div>\n        <div class=\"col-md-4 col-12\">\n            <h2>Analyze</h2>\n            <p>Visualize frequency across time, amplitiude of delta and many other angles.</p>\n            <p><a class=\"btn btn-secondary\" href=\"#\" role=\"button\">View details »</a></p>\n        </div>\n        <div class=\"col-md-4 col-12\">\n            <h2>Share</h2>\n            <p>Let the world know you solve a problem.</p>\n            <p><a class=\"btn btn-secondary\" href=\"#\" role=\"button\">View details »</a></p>\n        </div>\n    </div>\n</div>\n\n<div class=\"jumbotron row mt-2 text-center\">\n    <div class=\"container\">\n        <h1 class=\"display-3\">What's on your mind?</h1>\n        <p>Have any questions or feedback on the site? Have anything we can help you build? We'd love to hear from you.</p>\n        <p><a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Talk to Us</a></p>\n    </div>\n</div>"
 
 /***/ }),
 /* 445 */
@@ -67696,7 +67731,7 @@ module.exports = "<div class=\"row jumbotron p-3\" style=\"margin-top: -46px;\">
 /* 449 */
 /***/ (function(module, exports) {
 
-module.exports = "<li class=\"nav-item dropdown no-outline\" (blur)=\"notifications = false\" tabindex=\"0\">\n    <a class=\"nav-link text-white\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"\n       (click)=\"notifications = !notifications\">\n        <i class=\"fa fa-bell\"></i>\n        <span class=\"badge badge-info badge-notification\">1</span>\n    </a>\n    <div class=\"dropdown-menu dropdown-menu-right\" [ngbCollapse]=\"!notifications\">\n        Confirm Account\n    </div>\n</li>"
+module.exports = "<li class=\"nav-item dropdown no-outline\" (blur)=\"notifications = false\" tabindex=\"0\">\n    <a class=\"nav-link text-white\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"\n       (click)=\"notifications = !notifications\">\n        <i class=\"fa fa-bell\"></i>\n        <span class=\"badge badge-info badge-notification\" *ngIf=\"notices.length\">{{notices.length}}</span>\n    </a>\n    <ul class=\"dropdown-menu dropdown-menu-right\" [ngbCollapse]=\"!notifications\">\n        <li class=\"dropdown-item\" *ngIf=\"!notices.length\">\n            You have 0 notices.\n        </li>\n        <li class=\"dropdown-item\" *ngFor=\"let notice of notices\">\n            {{notice}}\n        </li>\n    </ul>\n</li>"
 
 /***/ }),
 /* 450 */
@@ -67750,7 +67785,60 @@ module.exports = "<li class=\"nav-item dropdown no-outline\" (blur)=\"accountMen
 /* 458 */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse\">\n    <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" (click)=\"isCollapsed = !isCollapsed\">\n        <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <a class=\"navbar-brand\" [routerLink]=\"['/']\">Mahr.io</a>\n\n    <div class=\"collapse navbar-collapse\" [ngbCollapse]=\"!isCollapsed\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" (click)=\"isCollapsed = !isCollapsed\" [routerLink]=\"['/']\">Home</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" (click)=\"isCollapsed = !isCollapsed\" [routerLink]=\"['/','tutorials']\">Tutorials</a>\n            </li>\n        </ul>\n        <div class=\"form-inline my-2 my-lg-0\">\n            <ul class=\"nav text-white\">\n                <notification *ngIf=\"isLoggedIn\"></notification>\n                <session (auth)=\"auth($event)\"></session>\n            </ul>\n        </div>\n    </div>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse\">\n    <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" (click)=\"isCollapsed = !isCollapsed\">\n        <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <a class=\"navbar-brand\" [routerLink]=\"['/']\">Mahr.io</a>\n\n    <div class=\"collapse navbar-collapse\" [ngbCollapse]=\"!isCollapsed\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" (click)=\"isCollapsed = !isCollapsed\" [routerLink]=\"['/']\">Home</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" (click)=\"isCollapsed = !isCollapsed\" [routerLink]=\"['/','tutorials']\">Tutorials</a>\n            </li>\n        </ul>\n        <div class=\"form-inline my-2 my-lg-0\">\n            <ul class=\"nav text-white\">\n                <notification *ngIf=\"isLoggedIn\" ></notification>\n                <session (auth)=\"auth($event)\"></session>\n            </ul>\n        </div>\n    </div>\n</nav>"
+
+/***/ }),
+/* 459 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NotificationService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(54);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _dec, _class;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+
+var NotificationService = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* Injectable */])(), _dec(_class = function () {
+  _createClass(NotificationService, null, [{
+    key: 'parameters',
+    get: function get() {
+      return [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]];
+    }
+  }]);
+
+  function NotificationService(Http) {
+    _classCallCheck(this, NotificationService);
+
+    this.http = Http;
+    this.notifications = [];
+  }
+
+  NotificationService.prototype.addNotice = function addNotice(notice) {
+    this.notifications.push(notice);
+  };
+
+  NotificationService.prototype.getAll = function getAll() {
+    return this.notifications;
+  };
+
+  NotificationService.prototype.clearAll = function clearAll() {
+    this.notifications = [];
+  };
+
+  return NotificationService;
+}()) || _class);
+
+/***/ }),
+/* 460 */
+/***/ (function(module, exports) {
+
+module.exports = ".dropdown-menu{min-width:300px}\n"
 
 /***/ })
 /******/ ]);
