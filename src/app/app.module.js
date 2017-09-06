@@ -10,8 +10,9 @@ import { HeaderModule } from 'mahrio-header/src/header.module';
 import { AppRoutingModule } from './app.routing.js';
 import { MainPage } from './main/main.page';
 import { Pages} from './pages';
-import { Tutorials } from './tutorials';
 import { Components } from './components';
+
+import { Services } from './services'
 
 import { HomeService } from './pages/home/home.service';
 
@@ -19,7 +20,6 @@ import { HomeService } from './pages/home/home.service';
   declarations: [
     MainPage,
     ...Pages,
-    ...Tutorials,
     ...Components,
   ],
   imports: [
@@ -29,13 +29,14 @@ import { HomeService } from './pages/home/home.service';
     ReactiveFormsModule,
     HttpModule,
 
-    HeaderModule,
+    HeaderModule.forRoot(),
     NgbModule.forRoot(),
     // Put this one last to avoid the 404 route capturing all requests
     AppRoutingModule,
   ],
   providers: [
-    HomeService
+    HomeService,
+    Services,
   ],
   bootstrap: [
     MainPage
