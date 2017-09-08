@@ -22,11 +22,15 @@ export class ViewTutorialComponent {
     if(this.articlesService.currentArticle ){
       this.tutorial = this.articlesService.currentArticle;
     }
-    this.articlesService.gett( this.route.params.value.link ).then( res => {
-      this.tutorial = res.article;
-    }, err => {
+   this._subs = this.articlesService.gett( this.route.params.value.link )
+      .subscribe( res => {
+        this.tutorial = res.article;
+      }, err => {
 
-    });
+      });
+  }
+  ngOnDestroy(){
+    if(this._subs){ this._subs.unsubscribe(); }
   }
 
 }

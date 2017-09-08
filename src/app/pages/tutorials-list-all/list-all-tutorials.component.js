@@ -18,8 +18,12 @@ export class ListAllTutorialsComponent {
   }
 
   ngOnInit() {
-    this.articlesService.gett().then( res=> {
-      this.articles = res.articles;
-    })
+    this._subs = this.articlesService.gett(null)
+      .subscribe( res=> {
+        this.articles = res.articles;
+      });
+  }
+  ngOnDestroy(){
+    if( this._subs ) { this._subs.unsubscribe(); }
   }
 }
