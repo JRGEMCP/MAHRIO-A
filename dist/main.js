@@ -89929,8 +89929,9 @@ var HeadingComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__heading_heading_component__ = __webpack_require__(760);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__filters_filters_component__ = __webpack_require__(813);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__filters_active_active_filters_component__ = __webpack_require__(817);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pagination_pagination_component__ = __webpack_require__(820);
 /* unused harmony reexport SessionComponent */
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_1__session_modal_session_modal_component__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_1__session_modal_session_modal_component__["a"]; });
 /* unused harmony reexport LoginComponent */
 /* unused harmony reexport RegisterComponent */
 /* unused harmony reexport RecoverPasswordComponent */
@@ -89942,6 +89943,7 @@ var HeadingComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_10__heading_heading_component__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_11__filters_filters_component__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_12__filters_active_active_filters_component__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_13__pagination_pagination_component__["a"]; });
 
 
 
@@ -89961,7 +89963,8 @@ var HeadingComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0
 
 
 
-var Components = [__WEBPACK_IMPORTED_MODULE_0__session_session_component__["a" /* SessionComponent */], __WEBPACK_IMPORTED_MODULE_1__session_modal_session_modal_component__["a" /* SessionModalComponent */], __WEBPACK_IMPORTED_MODULE_2__session_modal_login_login_component__["a" /* LoginComponent */], __WEBPACK_IMPORTED_MODULE_3__session_modal_register_register_component__["a" /* RegisterComponent */], __WEBPACK_IMPORTED_MODULE_4__session_modal_recoverpassword_recover_password_component__["a" /* RecoverPasswordComponent */], __WEBPACK_IMPORTED_MODULE_5__session_modal_recoverpassword_update_recover_password_update_component__["a" /* RecoverPasswordUpdateComponent */], __WEBPACK_IMPORTED_MODULE_6__session_modal_confirmaccount_confirmaccount_component__["a" /* ConfirmAccountComponent */], __WEBPACK_IMPORTED_MODULE_7__session_modal_confirmaccount_retry_confirmaccount_retry_component__["a" /* ConfirmAccountRetryComponent */], __WEBPACK_IMPORTED_MODULE_8__session_modal_update_password_update_password_component__["a" /* UpdatePasswordComponent */], __WEBPACK_IMPORTED_MODULE_9__notification_notification_component__["a" /* NotificationComponent */], __WEBPACK_IMPORTED_MODULE_10__heading_heading_component__["a" /* HeadingComponent */], __WEBPACK_IMPORTED_MODULE_11__filters_filters_component__["a" /* FiltersComponent */], __WEBPACK_IMPORTED_MODULE_12__filters_active_active_filters_component__["a" /* ActiveFiltersComponent */]];
+
+var Components = [__WEBPACK_IMPORTED_MODULE_0__session_session_component__["a" /* SessionComponent */], __WEBPACK_IMPORTED_MODULE_1__session_modal_session_modal_component__["a" /* SessionModalComponent */], __WEBPACK_IMPORTED_MODULE_2__session_modal_login_login_component__["a" /* LoginComponent */], __WEBPACK_IMPORTED_MODULE_3__session_modal_register_register_component__["a" /* RegisterComponent */], __WEBPACK_IMPORTED_MODULE_4__session_modal_recoverpassword_recover_password_component__["a" /* RecoverPasswordComponent */], __WEBPACK_IMPORTED_MODULE_5__session_modal_recoverpassword_update_recover_password_update_component__["a" /* RecoverPasswordUpdateComponent */], __WEBPACK_IMPORTED_MODULE_6__session_modal_confirmaccount_confirmaccount_component__["a" /* ConfirmAccountComponent */], __WEBPACK_IMPORTED_MODULE_7__session_modal_confirmaccount_retry_confirmaccount_retry_component__["a" /* ConfirmAccountRetryComponent */], __WEBPACK_IMPORTED_MODULE_8__session_modal_update_password_update_password_component__["a" /* UpdatePasswordComponent */], __WEBPACK_IMPORTED_MODULE_9__notification_notification_component__["a" /* NotificationComponent */], __WEBPACK_IMPORTED_MODULE_10__heading_heading_component__["a" /* HeadingComponent */], __WEBPACK_IMPORTED_MODULE_11__filters_filters_component__["a" /* FiltersComponent */], __WEBPACK_IMPORTED_MODULE_12__filters_active_active_filters_component__["a" /* ActiveFiltersComponent */], __WEBPACK_IMPORTED_MODULE_13__pagination_pagination_component__["a" /* PaginationComponent */]];
 
 /***/ }),
 /* 762 */
@@ -90590,8 +90593,8 @@ var HeaderModule = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__an
   imports: [__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_5__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */]],
   declarations: [__WEBPACK_IMPORTED_MODULE_6__header_header_component__["a" /* HeaderComponent */]].concat(__WEBPACK_IMPORTED_MODULE_7__components_index__["a" /* Components */]),
   providers: [__WEBPACK_IMPORTED_MODULE_8__services__["c" /* Services */]],
-  exports: [__WEBPACK_IMPORTED_MODULE_6__header_header_component__["a" /* HeaderComponent */], __WEBPACK_IMPORTED_MODULE_7__components_index__["b" /* HeadingComponent */], __WEBPACK_IMPORTED_MODULE_7__components_index__["c" /* FiltersComponent */], __WEBPACK_IMPORTED_MODULE_7__components_index__["d" /* ActiveFiltersComponent */]],
-  entryComponents: [__WEBPACK_IMPORTED_MODULE_7__components_index__["e" /* SessionModalComponent */]]
+  exports: [__WEBPACK_IMPORTED_MODULE_6__header_header_component__["a" /* HeaderComponent */], __WEBPACK_IMPORTED_MODULE_7__components_index__["b" /* HeadingComponent */], __WEBPACK_IMPORTED_MODULE_7__components_index__["c" /* FiltersComponent */], __WEBPACK_IMPORTED_MODULE_7__components_index__["d" /* ActiveFiltersComponent */], __WEBPACK_IMPORTED_MODULE_7__components_index__["e" /* PaginationComponent */]],
+  entryComponents: [__WEBPACK_IMPORTED_MODULE_7__components_index__["f" /* SessionModalComponent */]]
 }), _dec(_class = function () {
   function HeaderModule() {
     _classCallCheck(this, HeaderModule);
@@ -91083,7 +91086,7 @@ module.exports = "<h1>Privacy</h1>\n<p><i class=\"fa fa-pencil-square-o\"></i> E
 /* 794 */
 /***/ (function(module, exports) {
 
-module.exports = "<heading h=\"Explore Tutorials\" p=\"Use filters to quickly find the Tutorial you are looking for\"></heading>\n<filters></filters>\n<active-filters></active-filters>\n<div class=\"container mt-3\">\n    <div class=\"list-group\">\n        <a [routerLink]=\"['/','tutorial',tutorial.link]\" class=\"list-group-item list-group-item-action flex-column align-items-start\"\n           (click)=\"articlesService.currentArticle = tutorial;\" *ngFor=\"let tutorial of articles\">\n            <div class=\"d-flex w-100 justify-content-between pl-4\">\n                <div class=\"pl-2 star-icon\">\n                    <i class=\"fa fa-star\"></i>\n                </div>\n                <h5 class=\"mb-1\">{{tutorial.title}}</h5>\n                <small>{{tutorial.created}}</small>\n            </div>\n            <div class=\"pl-4\">\n                <p class=\"mb-1\">{{tutorial.deck}}</p>\n                <small>Donec id elit non mi porta.</small>\n            </div>\n        </a>\n    </div>\n</div>"
+module.exports = "<heading h=\"Explore Tutorials\" p=\"Use filters to quickly find the Tutorial you are looking for\"></heading>\n<filters></filters>\n<active-filters></active-filters>\n<div class=\"container mt-3\">\n    <div class=\"list-group\">\n        <a [routerLink]=\"['/','tutorial',tutorial.link]\" class=\"list-group-item list-group-item-action flex-column align-items-start\"\n           (click)=\"articlesService.currentArticle = tutorial;\" *ngFor=\"let tutorial of articles\">\n            <div class=\"d-flex w-100 justify-content-between pl-4\">\n                <div class=\"pl-2 star-icon\">\n                    <i class=\"fa fa-star\"></i>\n                </div>\n                <h5 class=\"mb-1\">{{tutorial.title}}</h5>\n                <small>{{tutorial.created}}</small>\n            </div>\n            <div class=\"pl-4\">\n                <p class=\"mb-1\">{{tutorial.deck}}</p>\n                <small>Donec id elit non mi porta.</small>\n            </div>\n        </a>\n    </div>\n</div>\n<paginate></paginate>"
 
 /***/ }),
 /* 795 */
@@ -91280,6 +91283,46 @@ module.exports = ".filters{border-bottom:1px solid #e3e3e3}.filters li{float:lef
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"row\">\n    <div class=\"container\">\n        <div class=\"d-flex w-100 justify-content-between filters\">\n            <nav class=\"p-2 navbar navbar-toggleable-md\">\n                <span class=\"navbar-text pr-2\">\n                    100 Tutorials in\n                </span>\n\n                <ul class=\"navbar-nav mr-auto\">\n                    <li class=\"nav-item\" *ngFor=\"let filtr of filters\">\n                        <button class=\"btn\">\n                            {{filtr}}\n                            <i class=\"fa fa-close\"></i>\n                        </button>\n                    </li>\n                </ul>\n            </nav>\n            <div class=\"p-2\">\n                <button class=\"btn btn-link\">\n                    <i class=\"fa fa-angle-left\"></i>\n                    Previous\n                </button>\n                <button class=\"btn btn-link pl-0\">\n                    Next\n                    <i class=\"fa fa-angle-right pl-1\"></i>\n                </button>\n            </div>\n        </div>\n    </div>\n</div>\n"
+
+/***/ }),
+/* 820 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaginationComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pagination_template_html__ = __webpack_require__(822);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pagination_template_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__pagination_template_html__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pagination_style_scss__ = __webpack_require__(821);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pagination_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__pagination_style_scss__);
+var _dec, _class;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+
+
+
+var PaginationComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* Component */])({
+  selector: 'paginate',
+  template: __WEBPACK_IMPORTED_MODULE_1__pagination_template_html___default.a,
+  styles: [__WEBPACK_IMPORTED_MODULE_2__pagination_style_scss___default.a]
+}), _dec(_class = function PaginationComponent() {
+  _classCallCheck(this, PaginationComponent);
+}) || _class);
+
+/***/ }),
+/* 821 */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+/* 822 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container pt-2 pb-2\">\n    <nav class=\"d-flex w-100 justify-content-between\">\n        <div class=\"backwards\">\n            <button class=\"btn\">\n                First\n            </button>\n            <button class=\"btn\">\n                Prev\n            </button>\n        </div>\n\n        <ul class=\"pagination\">\n            <li class=\"page-item pl-1 active\">\n                <a class=\"page-link\" href=\"#\">1</a>\n            </li>\n            <li class=\"page-item pl-1\"><a class=\"page-link\" href=\"#\">2</a></li>\n            <li class=\"page-item pl-1\"><a class=\"page-link\" href=\"#\">3</a></li>\n            <li class=\"page-item pl-1\"><a class=\"page-link\" href=\"#\">4</a></li>\n            <li class=\"page-item pl-1\"><a class=\"page-link\" href=\"#\">5</a></li>\n        </ul>\n\n        <div class=\"forward\">\n            <button class=\"btn btn-light\">\n                Next\n            </button>\n            <button class=\"btn btn-light\">\n                Last\n            </button>\n        </div>\n    </nav>\n</div>"
 
 /***/ })
 /******/ ]);
