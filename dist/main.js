@@ -89501,6 +89501,8 @@ var PrivacyPage = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__ang
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_mahrio_header_src_services__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__list_all_tutorials_template_html__ = __webpack_require__(794);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__list_all_tutorials_template_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__list_all_tutorials_template_html__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__list_all_tutorials_style_scss__ = __webpack_require__(816);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__list_all_tutorials_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__list_all_tutorials_style_scss__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _dec, _class;
@@ -89512,9 +89514,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
 
+
 var ListAllTutorialsComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* Component */])({
   selector: 'list-all-tutorials',
-  template: __WEBPACK_IMPORTED_MODULE_2__list_all_tutorials_template_html___default.a
+  template: __WEBPACK_IMPORTED_MODULE_2__list_all_tutorials_template_html___default.a,
+  styles: [__WEBPACK_IMPORTED_MODULE_3__list_all_tutorials_style_scss___default.a]
 }), _dec(_class = function () {
   _createClass(ListAllTutorialsComponent, null, [{
     key: 'parameters',
@@ -89528,6 +89532,7 @@ var ListAllTutorialsComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED
 
     this.articlesService = articles;
     this.articles = [];
+    this.filters = ['Deployed'];
   }
 
   ListAllTutorialsComponent.prototype.ngOnInit = function ngOnInit() {
@@ -89923,8 +89928,9 @@ var HeadingComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__notification_notification_component__ = __webpack_require__(762);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__heading_heading_component__ = __webpack_require__(760);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__filters_filters_component__ = __webpack_require__(813);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__filters_active_active_filters_component__ = __webpack_require__(817);
 /* unused harmony reexport SessionComponent */
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_1__session_modal_session_modal_component__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_1__session_modal_session_modal_component__["a"]; });
 /* unused harmony reexport LoginComponent */
 /* unused harmony reexport RegisterComponent */
 /* unused harmony reexport RecoverPasswordComponent */
@@ -89935,6 +89941,7 @@ var HeadingComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0
 /* unused harmony reexport NotificationComponent */
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_10__heading_heading_component__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_11__filters_filters_component__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_12__filters_active_active_filters_component__["a"]; });
 
 
 
@@ -89953,7 +89960,8 @@ var HeadingComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0
 
 
 
-var Components = [__WEBPACK_IMPORTED_MODULE_0__session_session_component__["a" /* SessionComponent */], __WEBPACK_IMPORTED_MODULE_1__session_modal_session_modal_component__["a" /* SessionModalComponent */], __WEBPACK_IMPORTED_MODULE_2__session_modal_login_login_component__["a" /* LoginComponent */], __WEBPACK_IMPORTED_MODULE_3__session_modal_register_register_component__["a" /* RegisterComponent */], __WEBPACK_IMPORTED_MODULE_4__session_modal_recoverpassword_recover_password_component__["a" /* RecoverPasswordComponent */], __WEBPACK_IMPORTED_MODULE_5__session_modal_recoverpassword_update_recover_password_update_component__["a" /* RecoverPasswordUpdateComponent */], __WEBPACK_IMPORTED_MODULE_6__session_modal_confirmaccount_confirmaccount_component__["a" /* ConfirmAccountComponent */], __WEBPACK_IMPORTED_MODULE_7__session_modal_confirmaccount_retry_confirmaccount_retry_component__["a" /* ConfirmAccountRetryComponent */], __WEBPACK_IMPORTED_MODULE_8__session_modal_update_password_update_password_component__["a" /* UpdatePasswordComponent */], __WEBPACK_IMPORTED_MODULE_9__notification_notification_component__["a" /* NotificationComponent */], __WEBPACK_IMPORTED_MODULE_10__heading_heading_component__["a" /* HeadingComponent */], __WEBPACK_IMPORTED_MODULE_11__filters_filters_component__["a" /* FiltersComponent */]];
+
+var Components = [__WEBPACK_IMPORTED_MODULE_0__session_session_component__["a" /* SessionComponent */], __WEBPACK_IMPORTED_MODULE_1__session_modal_session_modal_component__["a" /* SessionModalComponent */], __WEBPACK_IMPORTED_MODULE_2__session_modal_login_login_component__["a" /* LoginComponent */], __WEBPACK_IMPORTED_MODULE_3__session_modal_register_register_component__["a" /* RegisterComponent */], __WEBPACK_IMPORTED_MODULE_4__session_modal_recoverpassword_recover_password_component__["a" /* RecoverPasswordComponent */], __WEBPACK_IMPORTED_MODULE_5__session_modal_recoverpassword_update_recover_password_update_component__["a" /* RecoverPasswordUpdateComponent */], __WEBPACK_IMPORTED_MODULE_6__session_modal_confirmaccount_confirmaccount_component__["a" /* ConfirmAccountComponent */], __WEBPACK_IMPORTED_MODULE_7__session_modal_confirmaccount_retry_confirmaccount_retry_component__["a" /* ConfirmAccountRetryComponent */], __WEBPACK_IMPORTED_MODULE_8__session_modal_update_password_update_password_component__["a" /* UpdatePasswordComponent */], __WEBPACK_IMPORTED_MODULE_9__notification_notification_component__["a" /* NotificationComponent */], __WEBPACK_IMPORTED_MODULE_10__heading_heading_component__["a" /* HeadingComponent */], __WEBPACK_IMPORTED_MODULE_11__filters_filters_component__["a" /* FiltersComponent */], __WEBPACK_IMPORTED_MODULE_12__filters_active_active_filters_component__["a" /* ActiveFiltersComponent */]];
 
 /***/ }),
 /* 762 */
@@ -90582,8 +90590,8 @@ var HeaderModule = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__an
   imports: [__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_5__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */]],
   declarations: [__WEBPACK_IMPORTED_MODULE_6__header_header_component__["a" /* HeaderComponent */]].concat(__WEBPACK_IMPORTED_MODULE_7__components_index__["a" /* Components */]),
   providers: [__WEBPACK_IMPORTED_MODULE_8__services__["c" /* Services */]],
-  exports: [__WEBPACK_IMPORTED_MODULE_6__header_header_component__["a" /* HeaderComponent */], __WEBPACK_IMPORTED_MODULE_7__components_index__["b" /* HeadingComponent */], __WEBPACK_IMPORTED_MODULE_7__components_index__["c" /* FiltersComponent */]],
-  entryComponents: [__WEBPACK_IMPORTED_MODULE_7__components_index__["d" /* SessionModalComponent */]]
+  exports: [__WEBPACK_IMPORTED_MODULE_6__header_header_component__["a" /* HeaderComponent */], __WEBPACK_IMPORTED_MODULE_7__components_index__["b" /* HeadingComponent */], __WEBPACK_IMPORTED_MODULE_7__components_index__["c" /* FiltersComponent */], __WEBPACK_IMPORTED_MODULE_7__components_index__["d" /* ActiveFiltersComponent */]],
+  entryComponents: [__WEBPACK_IMPORTED_MODULE_7__components_index__["e" /* SessionModalComponent */]]
 }), _dec(_class = function () {
   function HeaderModule() {
     _classCallCheck(this, HeaderModule);
@@ -91075,7 +91083,7 @@ module.exports = "<h1>Privacy</h1>\n<p><i class=\"fa fa-pencil-square-o\"></i> E
 /* 794 */
 /***/ (function(module, exports) {
 
-module.exports = "<heading h=\"Explore Tutorials\" p=\"Use filters to quickly find the Tutorial you are looking for\"></heading>\n<filters></filters>\n<div class=\"container mt-3\">\n    <div class=\"list-group\">\n        <a [routerLink]=\"['/','tutorial',tutorial.link]\" class=\"list-group-item list-group-item-action flex-column align-items-start\"\n           (click)=\"articlesService.currentArticle = tutorial;\" *ngFor=\"let tutorial of articles\">\n            <div class=\"d-flex w-100 justify-content-between\">\n                <h5 class=\"mb-1\">{{tutorial.title}}</h5>\n                <small>{{tutorial.created}}</small>\n            </div>\n            <p class=\"mb-1\">{{tutorial.deck}}</p>\n            <small>Donec id elit non mi porta.</small>\n        </a>\n    </div>\n</div>\n"
+module.exports = "<heading h=\"Explore Tutorials\" p=\"Use filters to quickly find the Tutorial you are looking for\"></heading>\n<filters></filters>\n<active-filters></active-filters>\n<div class=\"container mt-3\">\n    <div class=\"list-group\">\n        <a [routerLink]=\"['/','tutorial',tutorial.link]\" class=\"list-group-item list-group-item-action flex-column align-items-start\"\n           (click)=\"articlesService.currentArticle = tutorial;\" *ngFor=\"let tutorial of articles\">\n            <div class=\"d-flex w-100 justify-content-between\">\n                <h5 class=\"mb-1\">{{tutorial.title}}</h5>\n                <small>{{tutorial.created}}</small>\n            </div>\n            <p class=\"mb-1\">{{tutorial.deck}}</p>\n            <small>Donec id elit non mi porta.</small>\n        </a>\n    </div>\n</div>\n"
 
 /***/ }),
 /* 795 */
@@ -91224,6 +91232,54 @@ module.exports = ".filters ul li a{cursor:pointer}.filters-pane{position:absolut
 /***/ (function(module, exports) {
 
 module.exports = "<nav class=\"navbar navbar-toggleable-md filters\">\n    <div class=\"container\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item\">\n                <a class=\"nav-link\">\n                    <i class=\"fa fa-star\"></i>\n                    Tutorials\n                </a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" (click)=\"filtersPane = !filtersPane\">\n                    Filter\n                    <i class=\"fa fa-chevron-circle-right\"></i>\n                </a>\n            </li>\n        </ul>\n        <div class=\"form-inline my-2 my-lg-0\">\n            <form class=\"form-inline\">\n                <input class=\"form-control mr-sm-2\" type=\"text\"\n                       placeholder=\"Filter by keyword\"\n                       aria-label=\"Filter by keyword\">\n                <i class=\"fa fa-search\"></i>\n            </form>\n        </div>\n    </div>\n</nav>\n<div class=\"filters-pane row\" [ngbCollapse]=\"!filtersPane\">\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-md-3\">\n                <h6>Stage</h6>\n                <hr/>\n                <ul>\n                    <li>\n                        Discovery\n                    </li>\n                    <li>\n                        Define\n                    </li>\n                    <li>\n                        Design\n                    </li>\n                    <li>\n                        Design\n                    </li>\n                    <li>\n                        Deployed\n                    </li>\n                </ul>\n            </div>\n            <div class=\"col-md-6\">\n                <h6>Domains</h6>\n                <hr/>\n                <div class=\"row\">\n                    <ul>\n                        <li>Car</li>\n                    </ul>\n                    <ul>\n                        <li>\n                            Health\n                        </li>\n                    </ul>\n                    <ul>\n                        <li>\n                            Home\n                        </li>\n                    </ul>\n                    <ul>\n                        <li>\n                            Office\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+
+/***/ }),
+/* 816 */
+/***/ (function(module, exports) {
+
+module.exports = ".list-group-item-action{border-top:none;border-left:none;border-right:none;margin-bottom:0}.list-group-item-action:focus,.list-group-item-action:hover{background:none}\n"
+
+/***/ }),
+/* 817 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ActiveFiltersComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__active_filters_template_html__ = __webpack_require__(819);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__active_filters_template_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__active_filters_template_html__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__active_filters_style_scss__ = __webpack_require__(818);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__active_filters_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__active_filters_style_scss__);
+var _dec, _class;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+
+
+
+var ActiveFiltersComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* Component */])({
+  selector: 'active-filters',
+  template: __WEBPACK_IMPORTED_MODULE_1__active_filters_template_html___default.a,
+  styles: [__WEBPACK_IMPORTED_MODULE_2__active_filters_style_scss___default.a]
+}), _dec(_class = function ActiveFiltersComponent() {
+  _classCallCheck(this, ActiveFiltersComponent);
+
+  this.filters = ['Deployed'];
+}) || _class);
+
+/***/ }),
+/* 818 */
+/***/ (function(module, exports) {
+
+module.exports = ".filters{list-style:none;border-bottom:1px solid #e3e3e3}.filters>span{margin-right:5px}.filters li{float:left;background:#e3e3e3;border-radius:10px}.filters li i{color:#990000}\n"
+
+/***/ }),
+/* 819 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row\">\n    <div class=\"container mt-3\">\n        <nav class=\"pl-2 navbar navbar-toggleable-md filters\">\n        <span class=\"navbar-text\">\n            100 Tutorials in\n        </span>\n\n            <ul class=\"navbar-nav mr-auto\">\n                <li class=\"nav-item\" *ngFor=\"let filtr of filters\">\n                    <button class=\"btn\">\n                        {{filtr}}\n                        <i class=\"fa fa-close\"></i>\n                    </button>\n                </li>\n            </ul>\n        </nav>\n    </div>\n</div>\n"
 
 /***/ })
 /******/ ]);
