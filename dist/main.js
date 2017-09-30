@@ -91273,13 +91273,13 @@ var ActiveFiltersComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MO
 /* 818 */
 /***/ (function(module, exports) {
 
-module.exports = ".filters{list-style:none;border-bottom:1px solid #e3e3e3}.filters>span{margin-right:5px}.filters li{float:left;background:#e3e3e3;border-radius:10px}.filters li i{color:#990000}\n"
+module.exports = ".filters{border-bottom:1px solid #e3e3e3}.filters li{float:left;background:#e3e3e3;border-radius:10px}.filters li i{color:#990000}\n"
 
 /***/ }),
 /* 819 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n    <div class=\"container mt-3\">\n        <nav class=\"pl-2 navbar navbar-toggleable-md filters\">\n        <span class=\"navbar-text\">\n            100 Tutorials in\n        </span>\n\n            <ul class=\"navbar-nav mr-auto\">\n                <li class=\"nav-item\" *ngFor=\"let filtr of filters\">\n                    <button class=\"btn\">\n                        {{filtr}}\n                        <i class=\"fa fa-close\"></i>\n                    </button>\n                </li>\n            </ul>\n        </nav>\n    </div>\n</div>\n"
+module.exports = "<div class=\"row\">\n    <div class=\"container\">\n        <div class=\"d-flex w-100 justify-content-between filters\">\n            <nav class=\"p-2 navbar navbar-toggleable-md\">\n                <span class=\"navbar-text pr-2\">\n                    100 Tutorials in\n                </span>\n\n                <ul class=\"navbar-nav mr-auto\">\n                    <li class=\"nav-item\" *ngFor=\"let filtr of filters\">\n                        <button class=\"btn\">\n                            {{filtr}}\n                            <i class=\"fa fa-close\"></i>\n                        </button>\n                    </li>\n                </ul>\n            </nav>\n            <div class=\"p-2\">\n                <button class=\"btn btn-link\">\n                    <i class=\"fa fa-angle-left\"></i>\n                    Previous\n                </button>\n                <button class=\"btn btn-link pl-0\">\n                    Next\n                    <i class=\"fa fa-angle-right pl-1\"></i>\n                </button>\n            </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ })
 /******/ ]);
