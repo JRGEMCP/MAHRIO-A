@@ -89922,8 +89922,9 @@ var HeadingComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__session_modal_update_password_update_password_component__ = __webpack_require__(769);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__notification_notification_component__ = __webpack_require__(762);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__heading_heading_component__ = __webpack_require__(760);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__filters_filters_component__ = __webpack_require__(813);
 /* unused harmony reexport SessionComponent */
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__session_modal_session_modal_component__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_1__session_modal_session_modal_component__["a"]; });
 /* unused harmony reexport LoginComponent */
 /* unused harmony reexport RegisterComponent */
 /* unused harmony reexport RecoverPasswordComponent */
@@ -89933,6 +89934,7 @@ var HeadingComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0
 /* unused harmony reexport UpdatePasswordComponent */
 /* unused harmony reexport NotificationComponent */
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_10__heading_heading_component__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_11__filters_filters_component__["a"]; });
 
 
 
@@ -89950,7 +89952,8 @@ var HeadingComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0
 
 
 
-var Components = [__WEBPACK_IMPORTED_MODULE_0__session_session_component__["a" /* SessionComponent */], __WEBPACK_IMPORTED_MODULE_1__session_modal_session_modal_component__["a" /* SessionModalComponent */], __WEBPACK_IMPORTED_MODULE_2__session_modal_login_login_component__["a" /* LoginComponent */], __WEBPACK_IMPORTED_MODULE_3__session_modal_register_register_component__["a" /* RegisterComponent */], __WEBPACK_IMPORTED_MODULE_4__session_modal_recoverpassword_recover_password_component__["a" /* RecoverPasswordComponent */], __WEBPACK_IMPORTED_MODULE_5__session_modal_recoverpassword_update_recover_password_update_component__["a" /* RecoverPasswordUpdateComponent */], __WEBPACK_IMPORTED_MODULE_6__session_modal_confirmaccount_confirmaccount_component__["a" /* ConfirmAccountComponent */], __WEBPACK_IMPORTED_MODULE_7__session_modal_confirmaccount_retry_confirmaccount_retry_component__["a" /* ConfirmAccountRetryComponent */], __WEBPACK_IMPORTED_MODULE_8__session_modal_update_password_update_password_component__["a" /* UpdatePasswordComponent */], __WEBPACK_IMPORTED_MODULE_9__notification_notification_component__["a" /* NotificationComponent */], __WEBPACK_IMPORTED_MODULE_10__heading_heading_component__["a" /* HeadingComponent */]];
+
+var Components = [__WEBPACK_IMPORTED_MODULE_0__session_session_component__["a" /* SessionComponent */], __WEBPACK_IMPORTED_MODULE_1__session_modal_session_modal_component__["a" /* SessionModalComponent */], __WEBPACK_IMPORTED_MODULE_2__session_modal_login_login_component__["a" /* LoginComponent */], __WEBPACK_IMPORTED_MODULE_3__session_modal_register_register_component__["a" /* RegisterComponent */], __WEBPACK_IMPORTED_MODULE_4__session_modal_recoverpassword_recover_password_component__["a" /* RecoverPasswordComponent */], __WEBPACK_IMPORTED_MODULE_5__session_modal_recoverpassword_update_recover_password_update_component__["a" /* RecoverPasswordUpdateComponent */], __WEBPACK_IMPORTED_MODULE_6__session_modal_confirmaccount_confirmaccount_component__["a" /* ConfirmAccountComponent */], __WEBPACK_IMPORTED_MODULE_7__session_modal_confirmaccount_retry_confirmaccount_retry_component__["a" /* ConfirmAccountRetryComponent */], __WEBPACK_IMPORTED_MODULE_8__session_modal_update_password_update_password_component__["a" /* UpdatePasswordComponent */], __WEBPACK_IMPORTED_MODULE_9__notification_notification_component__["a" /* NotificationComponent */], __WEBPACK_IMPORTED_MODULE_10__heading_heading_component__["a" /* HeadingComponent */], __WEBPACK_IMPORTED_MODULE_11__filters_filters_component__["a" /* FiltersComponent */]];
 
 /***/ }),
 /* 762 */
@@ -90579,8 +90582,8 @@ var HeaderModule = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__an
   imports: [__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_5__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */]],
   declarations: [__WEBPACK_IMPORTED_MODULE_6__header_header_component__["a" /* HeaderComponent */]].concat(__WEBPACK_IMPORTED_MODULE_7__components_index__["a" /* Components */]),
   providers: [__WEBPACK_IMPORTED_MODULE_8__services__["c" /* Services */]],
-  exports: [__WEBPACK_IMPORTED_MODULE_6__header_header_component__["a" /* HeaderComponent */], __WEBPACK_IMPORTED_MODULE_7__components_index__["b" /* HeadingComponent */]],
-  entryComponents: [__WEBPACK_IMPORTED_MODULE_7__components_index__["c" /* SessionModalComponent */]]
+  exports: [__WEBPACK_IMPORTED_MODULE_6__header_header_component__["a" /* HeaderComponent */], __WEBPACK_IMPORTED_MODULE_7__components_index__["b" /* HeadingComponent */], __WEBPACK_IMPORTED_MODULE_7__components_index__["c" /* FiltersComponent */]],
+  entryComponents: [__WEBPACK_IMPORTED_MODULE_7__components_index__["d" /* SessionModalComponent */]]
 }), _dec(_class = function () {
   function HeaderModule() {
     _classCallCheck(this, HeaderModule);
@@ -91072,7 +91075,7 @@ module.exports = "<h1>Privacy</h1>\n<p><i class=\"fa fa-pencil-square-o\"></i> E
 /* 794 */
 /***/ (function(module, exports) {
 
-module.exports = "<heading h=\"Explore Tutorials\" p=\"Use filters to quickly find the Tutorial you are looking for\"></heading>\n<div class=\"container mt-3\">\n    <div class=\"list-group\">\n        <a [routerLink]=\"['/','tutorial',tutorial.link]\" class=\"list-group-item list-group-item-action flex-column align-items-start\"\n           (click)=\"articlesService.currentArticle = tutorial;\" *ngFor=\"let tutorial of articles\">\n            <div class=\"d-flex w-100 justify-content-between\">\n                <h5 class=\"mb-1\">{{tutorial.title}}</h5>\n                <small>{{tutorial.created}}</small>\n            </div>\n            <p class=\"mb-1\">{{tutorial.deck}}</p>\n            <small>Donec id elit non mi porta.</small>\n        </a>\n    </div>\n</div>\n"
+module.exports = "<heading h=\"Explore Tutorials\" p=\"Use filters to quickly find the Tutorial you are looking for\"></heading>\n<filters></filters>\n<div class=\"container mt-3\">\n    <div class=\"list-group\">\n        <a [routerLink]=\"['/','tutorial',tutorial.link]\" class=\"list-group-item list-group-item-action flex-column align-items-start\"\n           (click)=\"articlesService.currentArticle = tutorial;\" *ngFor=\"let tutorial of articles\">\n            <div class=\"d-flex w-100 justify-content-between\">\n                <h5 class=\"mb-1\">{{tutorial.title}}</h5>\n                <small>{{tutorial.created}}</small>\n            </div>\n            <p class=\"mb-1\">{{tutorial.deck}}</p>\n            <small>Donec id elit non mi porta.</small>\n        </a>\n    </div>\n</div>\n"
 
 /***/ }),
 /* 795 */
@@ -91181,6 +91184,46 @@ module.exports = "<div style=\"height: 56px; width: 100%;\"></div>\n<nav class=\
 /***/ (function(module, exports) {
 
 module.exports = ".heading{padding:1.2em;text-align:center}\n"
+
+/***/ }),
+/* 813 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FiltersComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__filters_template_html__ = __webpack_require__(815);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__filters_template_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__filters_template_html__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__filters_style_scss__ = __webpack_require__(814);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__filters_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__filters_style_scss__);
+var _dec, _class;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+
+
+
+var FiltersComponent = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* Component */])({
+  selector: 'filters',
+  template: __WEBPACK_IMPORTED_MODULE_1__filters_template_html___default.a,
+  styles: [__WEBPACK_IMPORTED_MODULE_2__filters_style_scss___default.a]
+}), _dec(_class = function FiltersComponent() {
+  _classCallCheck(this, FiltersComponent);
+}) || _class);
+
+/***/ }),
+/* 814 */
+/***/ (function(module, exports) {
+
+module.exports = ".filters ul li a{cursor:pointer}.filters-pane{position:absolute;width:100%;z-index:999;background:#fff;border-bottom:2px solid #e3e3e3}\n"
+
+/***/ }),
+/* 815 */
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-toggleable-md filters\">\n    <div class=\"container\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item\">\n                <a class=\"nav-link\">\n                    <i class=\"fa fa-star\"></i>\n                    Tutorials\n                </a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" (click)=\"filtersPane = !filtersPane\">\n                    Filter\n                    <i class=\"fa fa-chevron-circle-right\"></i>\n                </a>\n            </li>\n        </ul>\n        <div class=\"form-inline my-2 my-lg-0\">\n            <form class=\"form-inline\">\n                <input class=\"form-control mr-sm-2\" type=\"text\"\n                       placeholder=\"Filter by keyword\"\n                       aria-label=\"Filter by keyword\">\n                <i class=\"fa fa-search\"></i>\n            </form>\n        </div>\n    </div>\n</nav>\n<div class=\"filters-pane row\" [ngbCollapse]=\"!filtersPane\">\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-md-3\">\n                <h6>Stage</h6>\n                <hr/>\n                <ul>\n                    <li>\n                        Discovery\n                    </li>\n                    <li>\n                        Define\n                    </li>\n                    <li>\n                        Design\n                    </li>\n                    <li>\n                        Design\n                    </li>\n                    <li>\n                        Deployed\n                    </li>\n                </ul>\n            </div>\n            <div class=\"col-md-6\">\n                <h6>Domains</h6>\n                <hr/>\n                <div class=\"row\">\n                    <ul>\n                        <li>Car</li>\n                    </ul>\n                    <ul>\n                        <li>\n                            Health\n                        </li>\n                    </ul>\n                    <ul>\n                        <li>\n                            Home\n                        </li>\n                    </ul>\n                    <ul>\n                        <li>\n                            Office\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ })
 /******/ ]);
