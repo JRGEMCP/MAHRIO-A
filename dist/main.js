@@ -91083,7 +91083,7 @@ module.exports = "<h1>Privacy</h1>\n<p><i class=\"fa fa-pencil-square-o\"></i> E
 /* 794 */
 /***/ (function(module, exports) {
 
-module.exports = "<heading h=\"Explore Tutorials\" p=\"Use filters to quickly find the Tutorial you are looking for\"></heading>\n<filters></filters>\n<active-filters></active-filters>\n<div class=\"container mt-3\">\n    <div class=\"list-group\">\n        <a [routerLink]=\"['/','tutorial',tutorial.link]\" class=\"list-group-item list-group-item-action flex-column align-items-start\"\n           (click)=\"articlesService.currentArticle = tutorial;\" *ngFor=\"let tutorial of articles\">\n            <div class=\"d-flex w-100 justify-content-between\">\n                <h5 class=\"mb-1\">{{tutorial.title}}</h5>\n                <small>{{tutorial.created}}</small>\n            </div>\n            <p class=\"mb-1\">{{tutorial.deck}}</p>\n            <small>Donec id elit non mi porta.</small>\n        </a>\n    </div>\n</div>\n"
+module.exports = "<heading h=\"Explore Tutorials\" p=\"Use filters to quickly find the Tutorial you are looking for\"></heading>\n<filters></filters>\n<active-filters></active-filters>\n<div class=\"container mt-3\">\n    <div class=\"list-group\">\n        <a [routerLink]=\"['/','tutorial',tutorial.link]\" class=\"list-group-item list-group-item-action flex-column align-items-start\"\n           (click)=\"articlesService.currentArticle = tutorial;\" *ngFor=\"let tutorial of articles\">\n            <div class=\"d-flex w-100 justify-content-between pl-4\">\n                <div class=\"pl-2 star-icon\">\n                    <i class=\"fa fa-star\"></i>\n                </div>\n                <h5 class=\"mb-1\">{{tutorial.title}}</h5>\n                <small>{{tutorial.created}}</small>\n            </div>\n            <div class=\"pl-4\">\n                <p class=\"mb-1\">{{tutorial.deck}}</p>\n                <small>Donec id elit non mi porta.</small>\n            </div>\n        </a>\n    </div>\n</div>"
 
 /***/ }),
 /* 795 */
@@ -91237,7 +91237,7 @@ module.exports = "<nav class=\"navbar navbar-toggleable-md filters\">\n    <div 
 /* 816 */
 /***/ (function(module, exports) {
 
-module.exports = ".list-group-item-action{border-top:none;border-left:none;border-right:none;margin-bottom:0}.list-group-item-action:focus,.list-group-item-action:hover{background:none}\n"
+module.exports = ".list-group-item-action{border-top:none;border-left:none;border-right:none;margin-bottom:0}.list-group-item-action:focus,.list-group-item-action:hover{background:none}.list-group-item-action .star-icon{position:absolute;left:0}\n"
 
 /***/ }),
 /* 817 */
