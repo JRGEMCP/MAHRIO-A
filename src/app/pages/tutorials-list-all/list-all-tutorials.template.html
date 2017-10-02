@@ -1,10 +1,11 @@
 <heading h="Explore Tutorials" p="Use filters to quickly find the Tutorial you are looking for"></heading>
 <filters></filters>
-<active-filters></active-filters>
+<active-filters [page]="pagingService" (change)="change($event)"></active-filters>
 <div class="container mt-3">
     <div class="list-group">
-        <a [routerLink]="['/','tutorial',tutorial.link]" class="list-group-item list-group-item-action flex-column align-items-start"
-           (click)="articlesService.currentArticle = tutorial;" *ngFor="let tutorial of articles">
+        <a [routerLink]="['/','tutorial',tutorial.link]"
+           class="list-group-item list-group-item-action flex-column align-items-start"
+           (click)="articlesService.currentArticle = tutorial;" *ngFor="let tutorial of pagingService.page">
             <div class="d-flex w-100 justify-content-between pl-4">
                 <div class="pl-2 star-icon">
                     <i class="fa fa-star"></i>
@@ -19,4 +20,7 @@
         </a>
     </div>
 </div>
-<paginate></paginate>
+
+<ng-container *ngIf="pagingService.pages > 1">
+    <paginate [page]="pagingService" (change)="change($event)"></paginate>
+</ng-container>
