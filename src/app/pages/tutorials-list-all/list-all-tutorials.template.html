@@ -1,5 +1,5 @@
 <heading h="Explore Tutorials" p="Use filters to quickly find the Tutorial you are looking for"></heading>
-<filters></filters>
+<filters (textFilter)="setSearchFilter($event)"></filters>
 <active-filters [page]="pagingService" (change)="change($event)"></active-filters>
 <div class="container mt-3">
     <div class="list-group">

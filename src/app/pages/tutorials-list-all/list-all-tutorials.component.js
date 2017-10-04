@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { ArticleService, PaginationService } from 'mahrio-header/src/services';
-import { Article } from 'mahrio-header/src/models';
+import { Article, NoFilter, SearchByNameFilter } from 'mahrio-header/src/models';
 
 import template from './list-all-tutorials.template.html';
 import style from './list-all-tutorials.style.scss';
@@ -19,22 +19,51 @@ export class ListAllTutorialsComponent {
     this.articlesService = articles;
     this.pagingService = paging;
     this.articles = [];
-    this.filters = ['Deployed'];
+    this.filters = [ new NoFilter() ];
   }
 
   ngOnInit() {
     this._subs = this.articlesService.gett(null)
-      .subscribe( res=> {
+      .subscribe( res => {
         res.articles.forEach( (article, i) => {
           this.articles.push( Article.fromPayload(article) );
-
         });
-        this.pagingService.items = this.articles;
-        this.pagingService.setPage(0);
+        this.applyFilters();
       });
   }
   ngOnDestroy(){
     if( this._subs ) { this._subs.unsubscribe(); }
+  }
+  setSearchFilter( val ){
+    if( val !== '' ) {
+      this.addSearchFilter( val );
+    } else {
+      this.removeSearchFilter();
+    }
+    this.applyFilters();
+    this.pagingService.setPage(0);
+  }
+  addSearchFilter( val ){
+    if( this.filters.some( f => f.name === 'mahrio.filters.searchbyname') ) {
+      this.filters.find( f => f.name === 'mahrio.filters.searchbyname').searchString = val;
+    } else {
+      this.filters.push( new SearchByNameFilter(val) );
+    }
+  }
+  removeSearchFilter(){
+    this.filters = this.filters.filter( f => f.name !== "mahrio.filters.searchbyname");
+  }
+  applyFilters(){
+    console.log( this.filters );
+    let apis = [];
+    this.filters.forEach( (filterModel) => {
+      if( filterModel.isAnd ){
+        apis = this.articles.filter(filterModel.filter);
+      }
+    });
+
+    this.pagingService.items = apis;
+    this.pagingService.setPage(0);
   }
   change($event){
     switch($event.type){
