@@ -12,8 +12,6 @@ import { MainPage } from './main/main.page';
 import { Pages} from './pages';
 import { Components } from './components';
 
-import { Services } from './services'
-
 import { HomeService } from './pages/home/home.service';
 
 @NgModule({
@@ -36,7 +34,6 @@ import { HomeService } from './pages/home/home.service';
   ],
   providers: [
     HomeService,
-    Services,
   ],
   bootstrap: [
     MainPage
