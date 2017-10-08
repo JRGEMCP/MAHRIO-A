@@ -3,7 +3,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import template from './main.page.html';
 
 import style from '../stylesheets/main.scss';
-import { AccessControlService } from '../services';
+import { AccessControlService } from 'mahrio-header/src/services';
 @Component({
   selector: 'app',
   template,
@@ -20,7 +20,6 @@ export class MainPage {
   }
 
   auth( token ){
-    console.log( 'Token:'+token );
     this.access.token = token;
   }
 }

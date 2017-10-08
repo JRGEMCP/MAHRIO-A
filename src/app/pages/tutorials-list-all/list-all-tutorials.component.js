@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { ArticleService, PaginationService } from 'mahrio-header/src/services';
+import { AccessControlService, ArticleService, PaginationService } from 'mahrio-header/src/services';
 import { Article, NoFilter, SearchByNameFilter } from 'mahrio-header/src/models';
 
 import template from './list-all-tutorials.template.html';
@@ -13,9 +13,12 @@ import style from './list-all-tutorials.style.scss';
 
 export class ListAllTutorialsComponent {
   static get parameters(){
-    return [ArticleService, PaginationService];
+    return [AccessControlService, ArticleService, PaginationService];
   }
-  constructor ( articles, paging ){
+  constructor ( access, articles, paging ){
+    access.token.subscribe( token => {
+      this.isLoggedIn = !!token
+    });
     this.articlesService = articles;
     this.pagingService = paging;
     this.articles = [];
@@ -54,7 +57,6 @@ export class ListAllTutorialsComponent {
     this.filters = this.filters.filter( f => f.name !== "mahrio.filters.searchbyname");
   }
   applyFilters(){
-    console.log( this.filters );
     let apis = [];
     this.filters.forEach( (filterModel) => {
       if( filterModel.isAnd ){
