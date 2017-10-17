@@ -1,3 +1,8 @@
+.star-icon {
+  position: absolute;
+  z-index: 9;
+  cursor: pointer;
+}
 .list-group-item-action {
   border-top: none;
   border-left: none;
@@ -6,9 +11,6 @@
   &:focus, &:hover {
     background: none;
   }
-  .star-icon {
-    position: absolute;
-    left: 0;
-  }
+
 
 }

@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { AccessControlService, ArticleService, PaginationService } from 'mahrio-header/src/services';
-import { Article, NoFilter, SearchByNameFilter } from 'mahrio-header/src/models';
+import { Article, FilterModel, NoFilter, SearchByNameFilter } from 'mahrio-header/src/models';
 
 import template from './list-all-tutorials.template.html';
 import style from './list-all-tutorials.style.scss';
@@ -17,14 +17,30 @@ export class ListAllTutorialsComponent {
   }
   constructor ( access, articles, paging ){
     access.token.subscribe( token => {
-      this.isLoggedIn = !!token
+      if( token ) {
+        this.isLoggedIn = !!token
+        setTimeout( ()=> {
+          this.loadFavorites();
+        }, 500);
+      }
     });
     this.articlesService = articles;
     this.pagingService = paging;
     this.articles = [];
     this.filters = [ new NoFilter() ];
+    this.favorites = [];
   }
 
+  loadFavorites(){
+    this.articlesService.getFavorites().toPromise()
+      .then( res => {
+        this.favorites = res.favorites
+
+        this.articles.map( article => {
+          article.favorite = this.favorites.some(fav => fav === article.id);
+        })
+      });
+  }
   ngOnInit() {
     this._subs = this.articlesService.gett(null)
       .subscribe( res => {
@@ -37,6 +53,8 @@ export class ListAllTutorialsComponent {
   ngOnDestroy(){
     if( this._subs ) { this._subs.unsubscribe(); }
   }
+
+  // FILTERS
   setSearchFilter( val ){
     if( val !== '' ) {
       this.addSearchFilter( val );
@@ -67,6 +85,28 @@ export class ListAllTutorialsComponent {
     this.pagingService.items = apis;
     this.pagingService.setPage(0);
   }
+
+  // FAVORITES
+  toggleFavorite( tutorial ){
+    if( tutorial.id ) {
+      if( tutorial.favorite ) {
+        this.articlesService.removeFavorite( tutorial.id ).toPromise()
+          .then( res => { this.articles.find(art => art.id === tutorial.id).favorite = false; this.applyFilters();})
+      } else {
+        this.articlesService.setFavorite( tutorial.id ).toPromise()
+          .then( res => { this.articles.find(art => art.id === tutorial.id).favorite = true; })
+      }
+    } else {
+      if( this.filters.some(filter => filter.name == 'mahrio.filters.favorites')) {
+        this.filters = this.filters.filter( filter => filter.name !== 'mahrio.filters.favorites');
+      } else {
+        this.filters.push( new FilterModel('mahrio.filters.favorites', 'AND', article => article.favorite) );
+      }
+      this.applyFilters();
+    }
+  }
+
+  // PAGINATION
   change($event){
     switch($event.type){
       case 'first':
