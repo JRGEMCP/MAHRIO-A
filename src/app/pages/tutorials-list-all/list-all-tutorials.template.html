@@ -1,23 +1,27 @@
 <heading h="Explore Tutorials" p="Use filters to quickly find the Tutorial you are looking for"></heading>
-<filters (textFilter)="setSearchFilter($event)"></filters>
+<filters (textFilter)="setSearchFilter($event)" (favorites)="toggleFavorite($event)"></filters>
 <active-filters [page]="pagingService" (change)="change($event)"></active-filters>
 <div class="container mt-3">
     <div class="list-group">
-        <a [routerLink]="['/','tutorial',tutorial.link]"
-           class="list-group-item list-group-item-action flex-column align-items-start"
-           (click)="articlesService.currentArticle = tutorial;" *ngFor="let tutorial of pagingService.page">
-            <div class="d-flex w-100 justify-content-between" [ngClass]="{'pl-4': isLoggedIn}">
-                <div class="pl-2 star-icon" *ngIf="isLoggedIn">
-                    <i class="fa fa-star"></i>
-                </div>
-                <h5 class="mb-1">{{tutorial.title}}</h5>
-                <small>{{tutorial.created}}</small>
+        <ng-container *ngFor="let tutorial of pagingService.page">
+            <div style="position:relative;">
+                <a class="pl-2 pt-3 star-icon" *ngIf="isLoggedIn" (click)="toggleFavorite(tutorial)" > <!-- toggle one vs all -->
+                    <i class="fa fa-star" [ngClass]="{'active': tutorial.favorite}"></i>
+                </a>
+                <a [routerLink]="['/','tutorial',tutorial.link]"
+                   class="list-group-item list-group-item-action flex-column align-items-start"
+                   (click)="articlesService.currentArticle = tutorial;" >
+                    <div class="d-flex w-100 justify-content-between" [ngClass]="{'pl-4': isLoggedIn}">
+                        <h5 class="mb-1">{{tutorial.title}}</h5>
+                        <small>{{tutorial.created}}</small>
+                    </div>
+                    <div [ngClass]="{'pl-4': isLoggedIn}">
+                        <p class="mb-1">{{tutorial.deck}}</p>
+                        <small>Donec id elit non mi porta.</small>
+                    </div>
+                </a>
             </div>
-            <div [ngClass]="{'pl-4': isLoggedIn}">
-                <p class="mb-1">{{tutorial.deck}}</p>
-                <small>Donec id elit non mi porta.</small>
-            </div>
-        </a>
+        </ng-container>
     </div>
 </div>
 
