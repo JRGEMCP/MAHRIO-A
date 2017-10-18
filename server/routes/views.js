@@ -14,10 +14,14 @@ module.exports = function(server, path, dynamic){
       path: '/{any*}',
       handler: function(request, reply){
         var page = {};
-        if( typeof request.params.any !== 'undefined' && request.params.any === '' && request&& server.pages.hasOwnProperty('home') ) {
-          page = server.pages.home;
-        } else if( server.pages.hasOwnProperty( request.params.any ) ) {
-          page = server.pages[ request.params.any ];
+        if( server.pages ) {
+          if( typeof request.params.any !== 'undefined' && request.params.any === '' && server.pages.hasOwnProperty('home') ) {
+            page = server.pages.home;
+          } else if( server.pages.hasOwnProperty( request.params.any ) ) {
+            page = server.pages[ request.params.any ];
+          } else {
+            page = null;
+          }
         } else {
           page = null;
         }
