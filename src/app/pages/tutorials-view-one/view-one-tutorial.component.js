@@ -18,16 +18,13 @@ export class ViewTutorialComponent {
     this.tutorial = {};
   }
   ngOnInit(){
-
     if(this.articlesService.currentArticle ){
       this.tutorial = this.articlesService.currentArticle;
     }
-   this._subs = this.articlesService.gett( this.route.params.value.link )
+    this._subs = this.articlesService.gett( this.route.params.value.link )
       .subscribe( res => {
         this.tutorial = res.article;
-      }, err => {
-
-      });
+      }, err => { });
   }
   ngOnDestroy(){
     if(this._subs){ this._subs.unsubscribe(); }
