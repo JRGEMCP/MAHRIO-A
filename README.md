@@ -1,6 +1,8 @@
 # MAHRIO-A
 A page for anonymous users
 
+Development version: **1.0.0** [![Build Status](https://travis-ci.org/JRGEMCP/MAHRIO-A.svg?branch=master)](https://travis-ci.org/JRGEMCP/MAHRIO-A)
+
 ## Get Started
 Download this repo using `git` and install its dependencies using `npm`.
 1. `git clone https://github.com/JRGMECP/mahrio-a.git`
