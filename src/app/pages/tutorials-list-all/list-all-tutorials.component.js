@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { AccessControlService, ArticleService, PaginationService } from 'mahrio-header/src/services';
+import { AccessControlService, ArticleService, ArticleFavoriteService, PaginationService } from 'mahrio-header/src/services';
 import { Article, FilterModel, NoFilter, SearchByNameFilter } from 'mahrio-header/src/models';
 
 import template from './list-all-tutorials.template.html';
@@ -13,9 +13,9 @@ import style from './list-all-tutorials.style.scss';
 
 export class ListAllTutorialsComponent {
   static get parameters(){
-    return [AccessControlService, ArticleService, PaginationService];
+    return [AccessControlService, ArticleService, ArticleFavoriteService, PaginationService];
   }
-  constructor ( access, articles, paging ){
+  constructor ( access, articles, favorites, paging ){
     access.token.subscribe( token => {
       if( token ) {
         this.isLoggedIn = !!token
@@ -25,6 +25,7 @@ export class ListAllTutorialsComponent {
       }
     });
     this.articlesService = articles;
+    this.favoriteService = favorites;
     this.pagingService = paging;
     this.articles = [];
     this.filters = [ new NoFilter() ];
@@ -32,7 +33,7 @@ export class ListAllTutorialsComponent {
   }
 
   loadFavorites(){
-    this.articlesService.getFavorites().toPromise()
+    this.favoriteService.getFavorites().toPromise()
       .then( res => {
         this.favorites = res.favorites
 
@@ -90,10 +91,10 @@ export class ListAllTutorialsComponent {
   toggleFavorite( tutorial ){
     if( tutorial.id ) {
       if( tutorial.favorite ) {
-        this.articlesService.removeFavorite( tutorial.id ).toPromise()
+        this.favoriteService.removeFavorite( tutorial.id ).toPromise()
           .then( res => { this.articles.find(art => art.id === tutorial.id).favorite = false; this.applyFilters();})
       } else {
-        this.articlesService.setFavorite( tutorial.id ).toPromise()
+        this.favoriteService.setFavorite( tutorial.id ).toPromise()
           .then( res => { this.articles.find(art => art.id === tutorial.id).favorite = true; })
       }
     } else {
