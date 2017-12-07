@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import template from './view-one-tutorial.template.html';
 import { ArticleService } from 'mahrio-header/src/services';
+import style from './view-one-tutorial.component.scss';
 
 @Component({
   selector: 'view-one-tutorial',
-  template
+  template,
+  styles: [style]
 })
 
 export class ViewTutorialComponent {
