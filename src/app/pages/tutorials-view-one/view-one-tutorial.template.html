@@ -1,1 +1,22 @@
-<heading [h]="tutorial.title" [p]="tutorial.deck" s="text-left pl-3"></heading>
+<div class="container-fluid">
+    <heading [h]="tutorial.title" [p]="tutorial.deck"></heading>
+    <div class="container">
+        <div class="pull-right">
+            <a [routerLink]="['/', 'tutorials']">Tutorials</a>
+        </div>
+        <article>
+            <section *ngFor="let section of tutorial.sections">
+                <h2>{{section.heading}}</h2>
+                <markdown [data]="section.body" class="fill-editor-preview"></markdown>
+            </section>
+            <section *ngIf="tutorial.code && tutorial.code.cache">
+                <h2>CODE EXAMPLE</h2>
+                <div ace-editor
+                     [(text)]="tutorial.code.cache" [mode]="'javascript'" [options]="options"
+                     [readOnly]="true" [autoUpdateContent]="true" [durationBeforeCallback]="1000"
+                     (textChanged)="textChanged($event)"
+                     style="min-height: 400px; width:100%; overflow: auto;"></div>
+            </section>
+        </article>
+    </div>
+</div>

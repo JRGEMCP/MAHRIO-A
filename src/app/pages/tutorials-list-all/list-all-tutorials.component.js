@@ -43,7 +43,7 @@ export class ListAllTutorialsComponent {
       });
   }
   ngOnInit() {
-    this._subs = this.articlesService.gett(null)
+    this._subs = this.articlesService.getPublished()
       .subscribe( res => {
         res.articles.forEach( (article, i) => {
           this.articles.push( Article.fromPayload(article) );

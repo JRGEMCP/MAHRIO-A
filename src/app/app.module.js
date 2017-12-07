@@ -1,6 +1,10 @@
+import { AceEditorModule } from 'ng2-ace-editor';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { MarkdownModule } from 'ngx-markdown';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -26,8 +30,10 @@ import { HomeService } from './pages/home/home.service';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    AceEditorModule,
 
     HeaderModule.forRoot(),
+    MarkdownModule.forRoot(),
     NgbModule.forRoot(),
     // Put this one last to avoid the 404 route capturing all requests
     AppRoutingModule,
