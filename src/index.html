@@ -8,6 +8,11 @@
 </head>
 <body>
     <app></app>
+    <script>
+        if( document.location.protocol != 'https:') {
+            document.location.href = 'https://' + document.location.host + document.location.pathname;
+        }
+    </script>
 </body>
 </html>
 
