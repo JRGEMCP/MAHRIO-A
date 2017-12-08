@@ -11,11 +11,16 @@
             </section>
             <section *ngIf="tutorial.code && tutorial.code.cache">
                 <h2>CODE EXAMPLE</h2>
-                <div ace-editor
-                     [(text)]="tutorial.code.cache" [mode]="'javascript'" [options]="options"
-                     [readOnly]="true" [autoUpdateContent]="true" [durationBeforeCallback]="1000"
-                     (textChanged)="textChanged($event)"
-                     style="min-height: 400px; width:100%; overflow: auto;"></div>
+                <div class="row">
+                    <div class="col-md-6 offset-md-3 mt-5 mb-5">
+                        <div ace-editor
+                             [(text)]="tutorial.code.cache" [mode]="'javascript'" [options]="options"
+                             [readOnly]="true" [autoUpdateContent]="true" [durationBeforeCallback]="1000"
+                             (textChanged)="textChanged($event)"
+                             style="min-height: 400px; width:100%; overflow: auto;"></div>
+                    </div>
+                </div>
+
             </section>
         </article>
     </div>
