@@ -1,63 +1,73 @@
-<div class="site-wrapper">
-    <div class="site-wrapper-inner">
-        <div class="cover-container">
-            <div class="inner cover">
-                <h1 class="display-4">Ambient Computing</h1>
-                <p class="lead col-12 col-md-6 offset-md-3">We are entering the age where technology works in the background. User experiences are about to change.</p>
-                <p class="lead">
-                    <a [routerLink]="'tutorials'" class="btn btn-lg btn-secondary">Learn more</a>
+<div style="background: #000">
+    <div class="site-wrapper" style="background: url('https://mahrio-whichdegree.s3.amazonaws.com/media/56633c2d18a8db0300d40d65/media/Slider1.jpg') center top no-repeat;background-size: cover; padding:0;">
+        <div class="site-wrapper-inner"  style="padding: 2rem 2rem; background: rgba(0,0,0,.6);">
+            <div class="cover-container">
+                <div class="inner cover text-white">
+                    <div style="text-shadow: 2px 2px 2px #333;">
+                        <h1 class="display-4">Ambient Computing</h1>
+                        <p class="lead col-12 col-md-6 offset-md-3">We are entering the age where technology works in the background. User experiences are about to change.</p>
+                    </div>
+                    <p class="lead">
+                        <a [routerLink]="'tutorials'" class="btn btn-success btn-lg btn-secondary">Learn more</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron row" style="background: url('https://mahrio-whichdegree.s3.amazonaws.com/media/56633c2d18a8db0300d40d65/media/Feature1.jpg') center top no-repeat; padding: 0; background-size: cover; margin-top: 2rem;">
+        <div class="container-fluid" style="padding: 2rem 2rem; background: rgba(0,0,0,.4);width: 100%;padding-top: 3rem;padding-bottom: 3rem;">
+            <div class="pull-right col-md-6" style="height: 100%">
+                <h1 class="display-4 text-white" style="text-shadow: 1px 1px #222">Collect</h1>
+                <p class="lead text-white" style="text-shadow: 1px 1px #222">We have sensors all around collecting <strong>data</strong> &mdash;in our homes, smart phones, automobiles, city infrastructure, industrial and farm equipment.
+                    <!--Sensors detect and measure information of all sorts of things like motion, temperature, humidity, pressure, sound, light, moisture.-->
                 </p>
+                <p><a class="btn btn-primary" href="#" role="button">Learn more »</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron row mt-2 text-right" style="background: url('https://mahrio-whichdegree.s3.amazonaws.com/media/56633c2d18a8db0300d40d65/media/Feature3.jpg') center top no-repeat; padding: 0;background-size: cover;">
+        <div class="container-fluid" style="padding: 2rem 2rem; background: rgba(0,0,0,.4);width: 100%;padding-top: 3rem;padding-bottom: 3rem;">
+            <div class="pull-left col-md-5" style="height: 100%">
+                <h1 class="display-4 text-white" style="text-shadow: 1px 1px #222">Control</h1>
+                <p class="lead text-white" style="text-shadow: 1px 1px #222">Acting on <strong>data</strong> could be something as simple receiving an text message when the moisture you are measuring drops below your defined threshold.</p>
+                <p><a class="btn btn-primary" href="#" role="button">Learn more »</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron row mt-2" style="background: url('https://mahrio-whichdegree.s3.amazonaws.com/media/56633c2d18a8db0300d40d65/media/Slider3.jpg') center center no-repeat; padding:0;background-size: cover;">
+        <div class="container-fluid" style="padding: 2rem 2rem; background: rgba(0,0,0,.4);width: 100%;padding-top: 3rem;padding-bottom: 3rem;">
+            <div class="pull-right col-md-5" style="height: 100%">
+                <h1 class="display-4 text-white"style="text-shadow: 1px 1px #222">Transmit</h1>
+                <p class="lead text-white" style="text-shadow: 1px 1px #222">Communicate <strong>data</strong> between systems in some form, such as an alphanumeric or an electrical signal.</p>
+                <p><a class="btn btn-primary" href="#" role="button">Learn more »</a></p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="jumbotron row mt-2">
-    <div class="container">
-        <div class="pull-right col-md-6" style="height: 100%">
-          <h1 class="display-4">Collect</h1>
-          <p class="lead">We have sensors all around collecting <strong>data</strong> &mdash;in our homes, smart phones, automobiles, city infrastructure, industrial and farm equipment.
-              <!--Sensors detect and measure information of all sorts of things like motion, temperature, humidity, pressure, sound, light, moisture.-->
-          </p>
-          <p><a class="btn btn-primary" href="#" role="button">Learn more »</a></p>
-        </div>
-    </div>
-</div>
 
-<div class="jumbotron row mt-2 text-right">
-    <div class="container">
-        <div class="pull-left col-md-5" style="height: 100%">
-          <h1 class="display-4">Transmit</h1>
-          <p class="lead">Communicate <strong>data</strong> between systems in some form, such as an alphanumeric or an electrical signal.</p>
-          <p><a class="btn btn-primary" href="#" role="button">Learn more »</a></p>
-        </div>
-    </div>
-</div>
-
-<div class="jumbotron row mt-2">
-    <div class="container">
-        <div class="pull-right col-md-5" style="height: 100%">
-          <h1 class="display-4">Control</h1>
-          <p class="lead">Acting on <strong>data</strong> could be something as simple receiving an text message when the moisture you are measuring drops below your defined threshold.</p>
-          <p><a class="btn btn-primary" href="#" role="button">Learn more »</a></p>
-        </div>
-    </div>
-</div>
-
-<div class="container-fluid">
+<div class="container-fluid mb-0" style="background: #fff;
+    padding-top: 2rem;
+    margin-top: -2rem;
+    padding-bottom: 2rem;">
     <h1 class="mt-2 mb-5 mt-md-5 mb-md-5 text-center" style="font-weight: 300">What else can you do with Data?</h1>
     <div class="row">
         <div class="hidden-sm-down pt-5 pb-5"></div>
         <div class="col-md-4 col-12 text-center">
             <h2>Store</h2>
-            <p class="lead">Bank your own <strong>data</strong> into privately in databases or file systems.</p>
+            <p class="lead">Bank your own <strong>data</strong> into databases or file systems for 100% privacy.</p>
             <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
         </div>
+        <hr class="hidden-md-up"/>
         <div class="col-md-4 col-12 text-center">
             <h2>Analyze</h2>
-            <p class="lead">Use online analytical tools that will help you explore and visualize <strong>data</strong>.</p>
+            <p class="lead">Leverage analytical tools that will help you explore and visualize <strong>data</strong>.</p>
             <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
         </div>
+        <hr class="hidden-md-up"/>
         <div class="col-md-4 col-12 text-center">
             <h2>Share</h2>
             <p class="lead">Manage authorized users to securely access you <strong>data</strong>.</p>
@@ -66,10 +76,13 @@
     </div>
 </div>
 
-<div class="jumbotron row mt-2 text-center">
-    <div class="container">
-        <h1 class="display-4">What's on your mind?</h1>
-        <p class="lead col-12 col-md-6 offset-md-3">Have any questions or feedback on the site? Have anything we can help you build? We'd love to hear from you.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Talk to Us</a></p>
+<div class="jumbotron row text-center"
+     style="background: url('https://mahrio-whichdegree.s3.amazonaws.com/media/56633c2d18a8db0300d40d65/media/Feature2.jpg') center bottom no-repeat; padding: 0;background-size: cover;">
+    <div style="padding: 2rem 1rem; background: rgba(0,0,0,.4); width: 100%; padding: 3rem 0;">
+        <div class="container">
+            <h1 class="display-4 text-white" style="text-shadow: 1px 1px #222">What's on your mind?</h1>
+            <p class="lead col-12 col-md-6 offset-md-3 text-white" style="text-shadow: 1px 1px #222">Have any questions or feedback on the site? Have anything we can help you build? We'd love to hear from you.</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Talk to Us</a></p>
+        </div>
     </div>
 </div>

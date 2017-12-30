@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <heading h="Explore Tutorials" p="Use filters to quickly find the Tutorial you are looking for"></heading>
     <filters (textFilter)="setSearchFilter($event)" (favorites)="toggleFavorite($event)"></filters>
-    <active-filters [page]="pagingService" (change)="change($event)"></active-filters>
+    <active-filters [page]="pagingService" (change)="change($event)" entity="tutorials"></active-filters>
     <div class="container mt-3">
         <div class="list-group">
             <ng-container *ngFor="let tutorial of pagingService.page">
@@ -18,13 +18,6 @@
                         </div>
                         <div [ngClass]="{'pl-4': isLoggedIn}">
                             <p class="mb-1">{{tutorial.deck}}</p>
-                            <small>Donec id elit non mi porta.</small>
-                        </div>
-                        <div [ngClass]="{'pl-4': isLoggedIn}" *ngIf="tutorial.tags">
-                            Tags:
-                            <span *ngFor="let tag of tutorial.tags; let i = index" class="badge badge-default ml-1">
-                                {{tag}}
-                            </span>
                         </div>
                     </a>
                 </div>

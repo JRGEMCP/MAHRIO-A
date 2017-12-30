@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <heading h="Explore Products" p="Bundled features to quickly prototype the engineering requirements"></heading>
+
+    <active-filters [page]="pagingService" (change)="change($event)" entity="products"></active-filters>
+    <div class="container mt-3">
+        <div class="list-group">
+            <ng-container *ngFor="let product of pagingService.page">
+                <div style="position:relative;">
+                    <a class="pl-2 pt-3 star-icon" *ngIf="isLoggedIn" (click)="toggleFavorite(product)" > <!-- toggle one vs all -->
+                        <i class="fa fa-star" [ngClass]="{'active': product.favorite}"></i>
+                    </a>
+                    <a [routerLink]="['/','product',product.link]"
+                       class="list-group-item list-group-item-action flex-column align-items-start"
+                       (click)="articlesService.currentArticle = tutorial;" >
+                        <div class="d-flex w-100 justify-content-between" [ngClass]="{'pl-4': isLoggedIn}">
+                            <h5 class="mb-1">{{product.title}}</h5>
+                            <small>{{product.created}}</small>
+                        </div>
+                        <div [ngClass]="{'pl-4': isLoggedIn}">
+                            <p class="mb-1">{{product.deck}}</p>
+                        </div>
+                    </a>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+
+    <ng-container *ngIf="pagingService.pages > 1">
+        <paginate [page]="pagingService" (change)="change($event)"></paginate>
+    </ng-container>
+</div>
