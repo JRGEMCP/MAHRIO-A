@@ -4,6 +4,13 @@
         <div class="pull-right">
             <a [routerLink]="['/', 'tutorials']">Tutorials</a>
         </div>
+        <div *ngIf="tutorial.tags && tutorial.tags.length">
+            Tags:
+            <span *ngFor="let tag of tutorial.tags; let i = index" class="badge badge-default ml-1">
+                {{tag}}
+            </span>
+        </div>
+
         <article>
             <section *ngFor="let section of tutorial.sections">
                 <h2>{{section.heading}}</h2>

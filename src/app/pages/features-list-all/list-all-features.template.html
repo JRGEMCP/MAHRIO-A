@@ -11,13 +11,19 @@
                     </a>
                     <a [routerLink]="['/','feature',feature.link]"
                        class="list-group-item list-group-item-action flex-column align-items-start"
-                       (click)="topicService.currentArticle = tutorial;" >
+                       (click)="topicService.currentFeature = tutorial;" >
                         <div class="d-flex w-100 justify-content-between" [ngClass]="{'pl-4': isLoggedIn}">
                             <h5 class="mb-1">{{feature.title}}</h5>
-                            <small>{{feature.created}}</small>
+                            <small>{{feature.created | date: 'MM/dd/yyyy'}}</small>
                         </div>
                         <div [ngClass]="{'pl-4': isLoggedIn}">
                             <p class="mb-1">{{feature.deck}}</p>
+                        </div>
+                        <div [ngClass]="{'pl-4': isLoggedIn}" *ngIf="feature.tags && feature.tags.length">
+                            Tags:
+                            <span *ngFor="let tag of feature.tags; let i = index" class="badge badge-default ml-1">
+                                {{tag}}
+                            </span>
                         </div>
                     </a>
                 </div>

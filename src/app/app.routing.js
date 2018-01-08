@@ -6,6 +6,8 @@ import {
   ListAllProductsComponent,
   ListAllMembersComponent,
   ViewTutorialComponent,
+  ViewFeatureComponent,
+  ViewProductComponent,
   TutorialsPage, TutorialsCreatePage,
   HomePage, AboutPage, PrivacyPage, FourOhFourPage
 } from './pages';
@@ -17,8 +19,11 @@ const Routes = [
 
   { path: 'tutorials', component: ListAllTutorialsComponent },
   { path: 'tutorial/:link', component: ViewTutorialComponent },
+
   { path: 'features', component: ListAllFeaturesComponent },
+  { path: 'feature/:link', component: ViewFeatureComponent },
   { path: 'products', component: ListAllProductsComponent },
+  { path: 'product/:link', component: ViewProductComponent },
   { path: 'community', component: ListAllMembersComponent },
 
   { path: '**', component: FourOhFourPage, pathMatch: 'full' }
