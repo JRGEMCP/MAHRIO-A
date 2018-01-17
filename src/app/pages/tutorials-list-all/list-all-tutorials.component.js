@@ -22,6 +22,8 @@ export class ListAllTutorialsComponent {
         setTimeout( ()=> {
           this.loadFavorites();
         }, 500);
+      } else {
+        this.isLoggedIn = false;
       }
     });
     this.articlesService = articles;

@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { TopicService, PaginationService } from 'mahrio-header/src/services';
-
+import { Feature } from 'mahrio-header/src/models';
 import { ActivatedRoute } from '@angular/router';
 
 import template from './view-one-feature.template.html';
@@ -25,14 +25,12 @@ export class ViewFeatureComponent {
     if(this.articlesService.currentTopic ){
       this.tutorial = this.articlesService.currentTopic;
     }
-    console.log( this.route.params.value.link );
     this._subs = this.articlesService.list()
       .subscribe( res => {console.log( res );
         let tut = res.topics.filter( art => art.link == this.route.params.value.link);
         if(tut.length) {
-          this.tutorial = tut[0];
+          this.tutorial = Feature.fromPayload(tut[0]);
         }
-        console.log( this.tutorial);
       }, err => { });
   }
   ngOnDestroy(){

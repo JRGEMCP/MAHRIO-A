@@ -20,7 +20,6 @@
                             <p class="mb-1">{{feature.deck}}</p>
                         </div>
                         <div [ngClass]="{'pl-4': isLoggedIn}" *ngIf="feature.tags && feature.tags.length">
-                            Tags:
                             <span *ngFor="let tag of feature.tags; let i = index" class="badge badge-default ml-1">
                                 {{tag}}
                             </span>

@@ -19,9 +19,8 @@
                         <div [ngClass]="{'pl-4': isLoggedIn}">
                             <p class="mb-1">{{tutorial.deck}}</p>
                         </div>
-                        <div [ngClass]="{'pl-4': isLoggedIn}" *ngIf="tutorial.tags && tutorial.tags.length">
-                            Tags:
-                            <span *ngFor="let tag of tutorial.tags; let i = index" class="badge badge-default ml-1">
+                        <div [ngClass]="{'pl-4': isLoggedIn}" *ngIf="tutorial.tagsArray && tutorial.tagsArray.length">
+                            <span *ngFor="let tag of tutorial.tagsArray; let i = index" class="badge badge-default ml-1">
                                 {{tag}}
                             </span>
                         </div>
