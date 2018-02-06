@@ -25,12 +25,9 @@ export class ViewFeatureComponent {
     if(this.articlesService.currentTopic ){
       this.tutorial = this.articlesService.currentTopic;
     }
-    this._subs = this.articlesService.list()
-      .subscribe( res => {console.log( res );
-        let tut = res.topics.filter( art => art.link == this.route.params.value.link);
-        if(tut.length) {
-          this.tutorial = Feature.fromPayload(tut[0]);
-        }
+    this._subs = this.articlesService.getOneByLink( this.route.params.value.link )
+      .subscribe( res => {
+        this.tutorial = Feature.fromPayload(res.topics[0]);
       }, err => { });
   }
   ngOnDestroy(){

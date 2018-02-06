@@ -19,7 +19,7 @@ export class ListAllFeaturesComponent {
     this.pagingService = paging;
   }
   ngOnInit() {
-    this._subs = this.topicService.list()
+    this._subs = this.topicService.list('all')
         .subscribe( res => {
           this.pagingService.items = res.topics;
           this.pagingService.setPage(0);

@@ -1,3 +1,9 @@
-export { };
+import { ArticleInlineComponent } from './article-inline/article-inline.component';
 
-export const Components = [ ];
+export {
+  ArticleInlineComponent
+};
+
+export const Components = [
+  ArticleInlineComponent
+];
