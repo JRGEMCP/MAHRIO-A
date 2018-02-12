@@ -1,3 +1,5 @@
+import 'prismjs';
+
 import { AceEditorModule } from 'ng2-ace-editor';
 
 import { BrowserModule } from '@angular/platform-browser';
