@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <heading h="Explore Courses" p="..."></heading>
+
+    <active-filters [page]="pagingService" (change)="change($event)" entity="products"></active-filters>
+    <div class="container mt-3">
+        <div class="list-group">
+            <ng-container *ngFor="let course of pagingService.page">
+                <div style="position:relative;">
+                    <a class="pl-2 pt-3 star-icon" *ngIf="isLoggedIn" (click)="toggleFavorite(course)" > <!-- toggle one vs all -->
+                        <i class="fa fa-star" [ngClass]="{'active': course.favorite}"></i>
+                    </a>
+                    <a [routerLink]="['/','course',course.link]"
+                       class="list-group-item list-group-item-action flex-column align-items-start"
+                       (click)="categoryService.currentCategory = tutorial;" >
+                        <div class="d-flex w-100 justify-content-between" [ngClass]="{'pl-4': isLoggedIn}">
+                            <h5 class="mb-1">{{course.title}}</h5>
+                            <small>{{course.created | date: 'MM/dd/yyyy'}}</small>
+                        </div>
+                        <div [ngClass]="{'pl-4': isLoggedIn}">
+                            <p class="mb-1">{{course.deck}}</p>
+                        </div>
+                        <div [ngClass]="{'pl-4': isLoggedIn}" *ngIf="course.tags && course.tags.length">
+                            Tags:
+                            <span *ngFor="let tag of course.tags; let i = index" class="badge badge-default ml-1">
+                                {{tag}}
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+
+    <ng-container *ngIf="pagingService.pages > 1">
+        <paginate [page]="pagingService" (change)="change($event)"></paginate>
+    </ng-container>
+</div>

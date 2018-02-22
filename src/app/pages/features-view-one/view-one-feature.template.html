@@ -9,12 +9,14 @@
     </div>
     <div class="container mt-3">
         <div *ngFor="let section of tutorial.body">
-            <div *ngIf="section.type == 'article'">
-                <article-inline [tutorial]="section.content"></article-inline>
-            </div>
-            <div *ngIf="!section.type">
-                {{section.content}}
-            </div>
+            <article>
+                <div *ngIf="section.type == 'article'">
+                    <article-inline [tutorial]="section.content"></article-inline>
+                </div>
+                <div *ngIf="!section.type">
+                    <markdown [data]="section.content" class="fill-editor-preview"></markdown>
+                </div>
+            </article>
         </div>
     </div>
 </div>
