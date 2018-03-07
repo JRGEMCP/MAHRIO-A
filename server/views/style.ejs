@@ -1,5 +1,8 @@
 <link rel="stylesheet" href="/assets/prismjs.css" />
 <style>
+    body {
+        margin: 0;
+    }
     body.mahrio {
         background-color: #000;
         margin: 0;
@@ -8,6 +11,9 @@
     body.mahrio .loader {
         border-color: rgba(222,88,50, .2);
         border-left-color: rgb(222,88,50);;
+    }
+    body.mahrio #spinner-overlay {
+        background: #000;
     }
     @keyframes rotating {
         100% {
@@ -37,7 +43,7 @@
         position: absolute;
         width: 100%;
         height: 100vh;
-        background: #000;
+        background: #FFF;
         z-index: 99999;
         top: 0;
     }
