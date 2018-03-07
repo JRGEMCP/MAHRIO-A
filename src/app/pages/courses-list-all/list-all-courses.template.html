@@ -1,5 +1,5 @@
-<div class="container-fluid">
-    <heading h="Explore Courses" p="..."></heading>
+<div class="container text-gray-dark" style="background: #FFF;">
+    <heading h="Explore Courses" p="..." s="spa-list-heading"></heading>
 
     <active-filters [page]="pagingService" (change)="change($event)" entity="products"></active-filters>
     <div class="container mt-3">
@@ -9,9 +9,9 @@
                     <a class="pl-2 pt-3 star-icon" *ngIf="isLoggedIn" (click)="toggleFavorite(course)" > <!-- toggle one vs all -->
                         <i class="fa fa-star" [ngClass]="{'active': course.favorite}"></i>
                     </a>
-                    <a [routerLink]="['/','course',course.link]"
+                    <a [routerLink]="['/','courses',course.link]"
                        class="list-group-item list-group-item-action flex-column align-items-start"
-                       (click)="categoryService.currentCategory = tutorial;" >
+                       (click)="courseService.currentCourse = course;" >
                         <div class="d-flex w-100 justify-content-between" [ngClass]="{'pl-4': isLoggedIn}">
                             <h5 class="mb-1">{{course.title}}</h5>
                             <small>{{course.created | date: 'MM/dd/yyyy'}}</small>

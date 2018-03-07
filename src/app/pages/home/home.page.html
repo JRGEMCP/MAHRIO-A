@@ -8,7 +8,7 @@
                         <p class="lead col-12 col-md-6 offset-md-3">We are entering the age where technology works in the background. User experiences are about to change.</p>
                     </div>
                     <p class="lead">
-                        <a [routerLink]="'tutorials'" class="btn btn-success btn-lg btn-secondary">Learn more</a>
+                        <a [routerLink]="'courses'" class="btn btn-success btn-lg btn-secondary">Learn more</a>
                     </p>
                 </div>
             </div>
@@ -22,34 +22,35 @@
                 <p class="lead text-white" style="text-shadow: 1px 1px #222">We have sensors all around collecting <strong>data</strong> &mdash;in our homes, smart phones, automobiles, city infrastructure, industrial and farm equipment.
                     <!--Sensors detect and measure information of all sorts of things like motion, temperature, humidity, pressure, sound, light, moisture.-->
                 </p>
-                <p><a class="btn btn-primary" href="#" role="button">Learn more »</a></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="jumbotron row mt-2 text-right" style="background: url('https://mahrio-whichdegree.s3.amazonaws.com/media/56633c2d18a8db0300d40d65/media/Feature3.jpg') center top no-repeat; padding: 0;background-size: cover;">
-        <div class="container-fluid" style="padding: 2rem 2rem; background: rgba(0,0,0,.4);width: 100%;padding-top: 3rem;padding-bottom: 3rem;">
-            <div class="pull-left col-md-5" style="height: 100%">
-                <h1 class="display-4 text-white" style="text-shadow: 1px 1px #222">Control</h1>
-                <p class="lead text-white" style="text-shadow: 1px 1px #222">Acting on <strong>data</strong> could be something as simple receiving an text message when the moisture you are measuring drops below your defined threshold.</p>
-                <p><a class="btn btn-primary" href="#" role="button">Learn more »</a></p>
+                <p><a class="btn btn-primary" [routerLink]="'tutorials'" role="button">Learn more »</a></p>
             </div>
         </div>
     </div>
 
     <div class="jumbotron row mt-2" style="background: url('https://mahrio-whichdegree.s3.amazonaws.com/media/56633c2d18a8db0300d40d65/media/Slider3.jpg') center center no-repeat; padding:0;background-size: cover;">
         <div class="container-fluid" style="padding: 2rem 2rem; background: rgba(0,0,0,.4);width: 100%;padding-top: 3rem;padding-bottom: 3rem;">
-            <div class="pull-right col-md-5" style="height: 100%">
+            <div class="pull-left col-md-5" style="height: 100%">
                 <h1 class="display-4 text-white"style="text-shadow: 1px 1px #222">Transmit</h1>
                 <p class="lead text-white" style="text-shadow: 1px 1px #222">Communicate <strong>data</strong> between systems in some form, such as an alphanumeric or an electrical signal.</p>
-                <p><a class="btn btn-primary" href="#" role="button">Learn more »</a></p>
+                <p><a class="btn btn-primary" [routerLink]="'features'" role="button">Learn more »</a></p>
             </div>
         </div>
     </div>
+
+    <div class="jumbotron row mt-2 text-right" style="background: url('https://mahrio-whichdegree.s3.amazonaws.com/media/56633c2d18a8db0300d40d65/media/Feature3.jpg') center top no-repeat; padding: 0;background-size: cover;">
+        <div class="container-fluid" style="padding: 2rem 2rem; background: rgba(0,0,0,.4);width: 100%;padding-top: 3rem;padding-bottom: 3rem;">
+            <div class="pull-right col-md-5" style="height: 100%">
+                <h1 class="display-4 text-white" style="text-shadow: 1px 1px #222">Control</h1>
+                <p class="lead text-white" style="text-shadow: 1px 1px #222">Acting on <strong>data</strong> could be something as simple receiving an text message when the moisture you are measuring drops below your defined threshold.</p>
+                <p><a class="btn btn-primary" [routerLink]="'products'" role="button">Learn more »</a></p>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 
-<div class="container-fluid mb-0" style="background: #fff;
+<div class="container-fluid mb-0 text-gray-dark" style="background: #fff;
     padding-top: 2rem;
     margin-top: -2rem;
     padding-bottom: 2rem;">

@@ -19,7 +19,7 @@ export class ListAllProductsComponent {
     this.pagingService = paging;
   }
   ngOnInit() {
-    this._subs = this.categoryService.list()
+    this._subs = this.categoryService.getPublished()
       .subscribe( res => {
         this.pagingService.items = res.categories;
         this.pagingService.setPage(0);

@@ -1,9 +1,9 @@
-<div class="container-fluid">
-    <heading [h]="tutorial.title" [p]="tutorial.deck"></heading>
+<div class="container">
+    <heading [h]="product.title" [p]="product.deck" s="spa-list-heading-html"></heading>
     <div class="container">
-        <div *ngIf="tutorial.tags && tutorial.tags.length">
+        <div *ngIf="product.tags && product.tags.length">
             Tags:
-            <span *ngFor="let tag of tutorial.tags; let i = index" class="badge badge-default ml-1">
+            <span *ngFor="let tag of product.tags; let i = index" class="badge badge-default ml-1">
                 {{tag}}
             </span>
         </div>

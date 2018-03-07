@@ -19,7 +19,7 @@ export class ListAllCoursesComponent {
     this.pagingService = paging;
   }
   ngOnInit() {
-    this._subs = this.courseService.list()
+    this._subs = this.courseService.list('all')
       .subscribe( res => {
         this.pagingService.items = res.courses;
         this.pagingService.setPage(0);

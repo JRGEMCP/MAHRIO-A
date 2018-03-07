@@ -1,33 +1,35 @@
-<div class="container-fluid">
-    <heading [h]="tutorial.title" [p]="tutorial.deck"></heading>
+<div class="container">
+    <heading [h]="tutorial.title" [p]="tutorial.deck" s="spa-list-heading-js"></heading>
     <div class="container">
-        <div class="pull-right">
-            <a [routerLink]="['/', 'tutorials']">Tutorials</a>
-        </div>
-        <div *ngIf="tutorial.tags && tutorial.tags.length">
+        <div class="spa-list-heading-js">
+            <div class="pull-right">
+                <a [routerLink]="['/', 'tutorials']">Tutorials</a>
+            </div>
+            <div *ngIf="tutorial.tags && tutorial.tags.length">
             <span *ngFor="let tag of tutorial.tags; let i = index" class="badge badge-default ml-1">
                 {{tag}}
             </span>
-        </div>
+            </div>
 
-        <article>
-            <section *ngFor="let section of tutorial.sections">
-                <h2>{{section.heading}}</h2>
-                <markdown [data]="section.body" class="fill-editor-preview"></markdown>
-            </section>
-            <section *ngIf="tutorial.code && tutorial.code.cache">
-                <h2>CODE EXAMPLE</h2>
-                <div class="row">
-                    <div class="col-md-6 offset-md-3 mt-5 mb-5">
-                        <div ace-editor
-                             [(text)]="tutorial.code.cache" [mode]="'javascript'" [options]="options"
-                             [readOnly]="true" [autoUpdateContent]="true" [durationBeforeCallback]="1000"
-                             (textChanged)="textChanged($event)"
-                             style="min-height: 400px; width:100%; overflow: auto;"></div>
+            <article>
+                <section *ngFor="let section of tutorial.sections">
+                    <h2>{{section.heading}}</h2>
+                    <markdown [data]="section.body" class="fill-editor-preview"></markdown>
+                </section>
+                <section *ngIf="tutorial.code && tutorial.code.cache">
+                    <h2>CODE EXAMPLE</h2>
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3 mt-5 mb-5">
+                            <div ace-editor
+                                 [(text)]="tutorial.code.cache" [mode]="'javascript'" [options]="options"
+                                 [readOnly]="true" [autoUpdateContent]="true" [durationBeforeCallback]="1000"
+                                 (textChanged)="textChanged($event)"
+                                 style="min-height: 400px; width:100%; overflow: auto;"></div>
+                        </div>
                     </div>
-                </div>
 
-            </section>
-        </article>
+                </section>
+            </article>
+        </div>
     </div>
 </div>

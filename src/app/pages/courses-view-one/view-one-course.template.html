@@ -1,0 +1,11 @@
+<div class="container">
+    <heading [h]="course.title" [p]="course.deck" s="spa-list-heading"></heading>
+    <div class="container">
+        <div *ngIf="course.tags && course.tags.length">
+            Tags:
+            <span *ngFor="let tag of course.tags; let i = index" class="badge badge-default ml-1">
+                {{tag}}
+            </span>
+        </div>
+    </div>
+</div>

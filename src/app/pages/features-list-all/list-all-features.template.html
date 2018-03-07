@@ -1,5 +1,5 @@
-<div class="container-fluid">
-    <heading h="Explore Features" p="Bundled tutorials to quickly implement popular use cases"></heading>
+<div class="container text-gray-dark" style="background: #FFF;">
+    <heading h="Explore Features" p="Bundled tutorials to quickly implement popular use cases" s="spa-list-heading-css"></heading>
 
     <active-filters [page]="pagingService" (change)="change($event)" entity="features"></active-filters>
     <div class="container mt-3">
@@ -11,7 +11,7 @@
                     </a>
                     <a [routerLink]="['/','feature',feature.link]"
                        class="list-group-item list-group-item-action flex-column align-items-start"
-                       (click)="topicService.currentFeature = tutorial;" >
+                       (click)="topicService.currentTopic = feature;" >
                         <div class="d-flex w-100 justify-content-between" [ngClass]="{'pl-4': isLoggedIn}">
                             <h5 class="mb-1">{{feature.title}}</h5>
                             <small>{{feature.created | date: 'MM/dd/yyyy'}}</small>

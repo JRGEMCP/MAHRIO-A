@@ -9,6 +9,7 @@ import {
   ViewTutorialComponent,
   ViewFeatureComponent,
   ViewProductComponent,
+  ViewCourseComponent,
   TutorialsPage, TutorialsCreatePage,
   HomePage, AboutPage, PrivacyPage, FourOhFourPage
 } from './pages';
@@ -26,6 +27,7 @@ const Routes = [
   { path: 'products', component: ListAllProductsComponent },
   { path: 'product/:link', component: ViewProductComponent },
   { path: 'courses', component: ListAllCoursesComponent },
+  { path: 'courses/:link', component: ViewCourseComponent },
 
   { path: '**', component: FourOhFourPage, pathMatch: 'full' }
 ];

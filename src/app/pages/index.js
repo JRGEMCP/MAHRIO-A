@@ -10,6 +10,7 @@ import { ListAllMembersComponent } from './community-list-all/list-all-members.c
 import { ViewTutorialComponent } from './tutorials-view-one/view-one-tutorial.component';
 import { ViewFeatureComponent } from './features-view-one/view-one-feature.component';
 import { ViewProductComponent } from './products-view-one/view-one-product.component';
+import { ViewCourseComponent } from './courses-view-one/view-one-course.component';
 
 export {
   HomePage,
@@ -24,7 +25,8 @@ export {
   ListAllMembersComponent,
   ViewTutorialComponent,
   ViewFeatureComponent,
-  ViewProductComponent
+  ViewProductComponent,
+  ViewCourseComponent
 };
 
 export const Pages = [
@@ -40,5 +42,6 @@ export const Pages = [
   ListAllMembersComponent,
   ViewTutorialComponent,
   ViewFeatureComponent,
-  ViewProductComponent
+  ViewProductComponent,
+  ViewCourseComponent
 ];

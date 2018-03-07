@@ -1,6 +1,30 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~font-awesome/scss/font-awesome';
 
+body.mahrio {
+  background-color: #000;
+  .spa-main {
+    .spa-list-heading-js, .spa-list-heading-css, .spa-list-heading-html, .spa-list-heading  {
+      background: #000;
+      margin: 0 -15px;
+    }
+    .spa-list-heading-js {
+      color: #f6dd3c !important;
+    }
+    .spa-list-heading-css {
+      color: #1874b8 !important;
+    }
+    .spa-list-heading-html {
+      color: #ef6534 !important;
+    }
+    .spa-list-heading {
+      color: #5cb85c !important;
+    }
+    .contatiner {
+      background: #FFF;
+    }
+  }
+}
 article {
   img, video {
     display: block;

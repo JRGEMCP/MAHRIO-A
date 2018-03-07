@@ -15,23 +15,23 @@ export class ViewProductComponent {
   static get parameters(){
     return [CategoryService, ActivatedRoute];
   }
-  constructor( article, route ){
-    this.articlesService = article;
+  constructor( category, route ){
+    this.productService = category;
     this.route = route;
-    this.tutorial = {};
+    this.product = {};
   }
   ngOnInit(){
-    if(this.articlesService.currentCategory ){
-      this.tutorial = this.articlesService.currentCategory;
-      console.log( 'the', this.tutorial);
+    if(this.productService.currentProduct ){
+      this.product = this.productService.currentProduct;
+    } else {
+      this._subs = this.productService.getPublished( )
+        .subscribe( res => {
+          let tut = res.categories.filter( art => art.link == this.route.params.value.link);
+          if(tut.length) {
+            this.product = tut[0];
+          }
+        }, err => { });
     }
-    this._subs = this.articlesService.list( )
-      .subscribe( res => {
-        let tut = res.categories.filter( art => art.link == this.route.params.value.link);
-        if(tut.length) {
-          this.tutorial = tut[0];
-        }
-      }, err => { });
   }
   ngOnDestroy(){
     if(this._subs){ this._subs.unsubscribe(); }

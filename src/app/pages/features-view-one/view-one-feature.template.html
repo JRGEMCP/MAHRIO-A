@@ -1,5 +1,5 @@
-<div class="container-fluid">
-    <heading [h]="tutorial.title" [p]="tutorial.deck"></heading>
+<div class="container">
+    <heading [h]="tutorial.title" [p]="tutorial.deck" s="spa-list-heading-css"></heading>
     <div class="container">
         <div *ngIf="tutorial.tagsArray && tutorial.tagsArray.length">
             <span *ngFor="let tag of tutorial.tagsArray; let i = index" class="badge badge-default ml-1">
@@ -7,7 +7,7 @@
             </span>
         </div>
     </div>
-    <div class="container mt-3">
+    <div class="container mt-3 spa-list-heading-css">
         <div *ngFor="let section of tutorial.body">
             <article>
                 <div *ngIf="section.type == 'article'">
