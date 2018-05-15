@@ -1,7 +1,7 @@
 <div class="container text-gray-dark" style="background: #FFF;">
     <heading h="Explore Tutorials" p="Use filters to quickly find the Tutorial you are looking for" s="spa-list-heading-js"></heading>
-    <filters (textFilter)="setSearchFilter($event)" (favorites)="toggleFavorite($event)"></filters>
-    <active-filters [page]="pagingService" (change)="change($event)" entity="tutorials"></active-filters>
+    <!--<filters (textFilter)="setSearchFilter($event)" (favorites)="toggleFavorite($event)"></filters>-->
+    <!--<active-filters [page]="pagingService" (change)="change($event)" entity="tutorials"></active-filters>-->
     <div class="container mt-3">
         <div class="list-group">
             <ng-container *ngFor="let tutorial of pagingService.page">

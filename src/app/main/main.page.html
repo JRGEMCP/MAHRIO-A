@@ -1,6 +1,7 @@
-<header-as-a-service (auth)="auth($event)"></header-as-a-service>
+<!--<header-as-a-service (auth)="auth($event)"></header-as-a-service>-->
 
 <!-- MAIN WRAPPER -->
-<div style="margin-top: 56px" class="spa-main">
+<sub-header *ngIf="loggedIn"></sub-header>
+<div style="margin-top: 56px" class="spa-main test">
     <router-outlet></router-outlet>
 </div>

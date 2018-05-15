@@ -8,15 +8,15 @@
         </div>
     </div>
     <div class="container mt-3 spa-list-heading-css">
-        <div *ngFor="let section of tutorial.body">
-            <article>
+        <article>
+            <div *ngFor="let section of tutorial.body">
                 <div *ngIf="section.type == 'article'">
                     <article-inline [tutorial]="section.content"></article-inline>
                 </div>
                 <div *ngIf="!section.type">
                     <markdown [data]="section.content" class="fill-editor-preview"></markdown>
                 </div>
-            </article>
-        </div>
+            </div>
+        </article>
     </div>
 </div>

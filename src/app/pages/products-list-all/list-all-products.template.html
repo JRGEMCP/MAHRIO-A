@@ -1,7 +1,7 @@
 <div class="container text-gray-dark" style="background: #FFF;">
     <heading h="Explore Products" p="Bundled features to quickly prototype the engineering requirements" s="spa-list-heading-html"></heading>
 
-    <active-filters [page]="pagingService" (change)="change($event)" entity="products"></active-filters>
+    <!--<active-filters [page]="pagingService" (change)="change($event)" entity="products"></active-filters>-->
     <div class="container mt-3">
         <div class="list-group">
             <ng-container *ngFor="let product of pagingService.page">

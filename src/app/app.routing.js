@@ -33,7 +33,7 @@ const Routes = [
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(Routes) ],
+  imports: [ RouterModule.forChild(Routes) ],
   exports: [ RouterModule ],
 })
 export class AppRoutingModule { }

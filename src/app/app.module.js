@@ -1,10 +1,10 @@
-import 'prismjs';
+//import 'prismjs';
 
 import { AceEditorModule } from 'ng2-ace-editor';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { MarkdownModule } from 'ngx-markdown';
 
@@ -13,14 +13,14 @@ import { HttpModule } from '@angular/http';
 
 import { HeaderModule } from 'mahrio-header/src/header.module';
 
-import { AppRoutingModule } from './app.routing.js';
+import { App2RoutingModule } from './app2.routing.js';
 import { MainPage } from './main/main.page';
 import { Pages} from './pages';
 import { Components } from './components';
 
-import { HomeService } from './pages/home/home.service';
+//import { HomeService } from './pages/home/home.service';
 
-@NgModule({
+/*@NgModule({
   declarations: [
     MainPage,
     ...Pages,
@@ -45,6 +45,22 @@ import { HomeService } from './pages/home/home.service';
   ],
   bootstrap: [
     MainPage
+  ],
+  exports: [
+    HeaderModule,
+    AppRoutingModule,
+    NgbModule,
+    ...Pages,
+    ...Components,
   ]
+})*/
+@NgModule({
+  declarations: [MainPage, ...Pages, ...Components],
+  imports: [BrowserModule, HttpModule, App2RoutingModule, FormsModule,
+    ReactiveFormsModule, AceEditorModule, HeaderModule.forRoot(), MarkdownModule.forRoot()],
+  bootstrap: [
+    MainPage
+  ],
+  exports: [...Pages]
 })
-export class AppModule { }
+export class AppModule {}

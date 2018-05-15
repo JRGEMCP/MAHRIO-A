@@ -8,4 +8,13 @@
             </span>
         </div>
     </div>
+    <div class="container mt-3 spa-list-heading-css">
+        <article>
+            <div *ngFor="let section of product.body">
+                <div *ngIf="!section.type">
+                    <markdown [data]="section.content" class="fill-editor-preview"></markdown>
+                </div>
+            </div>
+        </article>
+    </div>
 </div>

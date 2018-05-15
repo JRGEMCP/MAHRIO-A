@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { CategoryService, PaginationService } from 'mahrio-header/src/services';
 import { ActivatedRoute } from '@angular/router';
+import { Product } from 'mahrio-header/src/models';
 
 import template from './view-one-product.template.html';
 import style from './view-one-product.component.scss';
@@ -21,14 +22,14 @@ export class ViewProductComponent {
     this.product = {};
   }
   ngOnInit(){
-    if(this.productService.currentProduct ){
-      this.product = this.productService.currentProduct;
+    if(this.productService.currentCategory ){
+      this.product = this.productService.currentCategory;
     } else {
       this._subs = this.productService.getPublished( )
         .subscribe( res => {
           let tut = res.categories.filter( art => art.link == this.route.params.value.link);
           if(tut.length) {
-            this.product = tut[0];
+            this.product = Product.fromPayload(tut[0]);
           }
         }, err => { });
     }

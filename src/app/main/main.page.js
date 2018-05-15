@@ -4,6 +4,7 @@ import template from './main.page.html';
 
 import style from '../stylesheets/main.scss';
 import { AccessControlService } from 'mahrio-header/src/services';
+
 @Component({
   selector: 'app',
   template,
@@ -17,10 +18,9 @@ export class MainPage {
   }
   constructor(AccessControlService){
     this.access = AccessControlService;
-  }
-
-  auth( token ){
-    this.access.token = token;
+    this.access.loggedIn.subscribe( state => {
+      this.loggedIn = state;
+    })
   }
 }
 
